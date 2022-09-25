@@ -1,0 +1,62 @@
+name: publish
+on:
+    workflow_dispatch:
+    pull_request_target:
+        types:
+            - closed
+        branches:
+            - main
+        paths:
+            - "src/**"
+            - "README.md"
+            - "package.json"
+jobs:
+    publish:
+        if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request_target' && github.event.pull_request.merged == true) }}
+        runs-on: ubuntu-latest
+        environment: ABYSSERS_PUBLISH_ENV
+        outputs:
+            type: ${{ steps.final.outputs.type }}
+            version: ${{ steps.final.outputs.version }}
+            old-version: ${{ steps.final.outputs.old-version }}
+        steps:
+            - name: "[Download Repo]"
+              uses: actions/checkout@v2
+              with:
+                  ref: main
+            - name: "[Setup NodeJs]"
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+            - name: "[Install Dependencies]"
+              run: sudo npm install --unsafe-perm=true --allow-root --ignore-scripts
+            - name: "[Build]"
+              run: npm run build
+            - name: "[Publish 2 NPM]"
+              id: final
+              uses: JS-DevTools/npm-publish@v1
+              with:
+                  token: ${{ secrets.MORILENCE_NPM_TOKEN }}
+                  access: public
+                  check-version: true
+                  tag: latest
+    notify:
+        needs: publish
+        if: ${{ needs.publish.outputs.type != 'none' }}
+        runs-on: ubuntu-latest
+        environment: ABYSSERS_NOTIFY_ENV
+        steps:
+            - name: "[Notify Abyssers/jit of spatula Updates]"
+              uses: peter-evans/repository-dispatch@v2
+              with:
+                  token: ${{ secrets.MORILENCE_GENERAL_PAT }}
+                  repository: Abyssers/jit
+                  event-type: spatula-updated
+                  client-payload: '{ "sha": "${{ github.sha }}", "ref": "${{ github.ref }}", "changes": "${{ github.event.changes }}", "version": "${{ needs.publish.outputs.version }}" }'
+            - name: "[Notify Abyssers/blog of spatula Updates]"
+              uses: peter-evans/repository-dispatch@v2
+              with:
+                  token: ${{ secrets.MORILENCE_GENERAL_PAT }}
+                  repository: Abyssers/blog
+                  event-type: spatula-updated
+                  client-payload: '{ "sha": "${{ github.sha }}", "ref": "${{ github.ref }}", "changes": "${{ github.event.changes }}", "version": "${{ needs.publish.outputs.version }}" }'
