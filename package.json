@@ -1,7 +1,7 @@
 {
     "name": "@abysser/spatula",
     "version": "1.0.0",
-    "description": "A JavaScript utility library that is extremely easy to use",
+    "description": "A handy utensil for javascript cooking",
     "main": "dist/index.js",
     "type": "commonjs",
     "engines": {
