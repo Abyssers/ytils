@@ -26,8 +26,5 @@
  * // => false
  */
 export function isInt(value: any): boolean {
-    return (
-        Number.isInteger(value) ||
-        (Object.prototype.toString.call(value) === "[object Number]" && Number.isInteger(+value))
-    );
+    return Object.prototype.toString.call(value) === "[object Number]" && Number.isInteger(+value)
 }
