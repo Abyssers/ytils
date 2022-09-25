@@ -1,3 +1,3 @@
 spatula
 
-A JavaScript utility library that is extremely easy to use
+A handy utensil for javascript cooking
