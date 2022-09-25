@@ -1,0 +1,56 @@
+{
+    "name": "@abysser/spatula",
+    "version": "1.0.0",
+    "description": "A JavaScript utility library that is extremely easy to use",
+    "main": "dist/index.js",
+    "type": "commonjs",
+    "engines": {
+        "node": ">=10.24.1"
+    },
+    "files": [
+        "dist",
+        "LICENSE",
+        "package.json",
+        "README.md"
+    ],
+    "scripts": {
+        "prepare": "husky install",
+        "build": "rollup -c"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Abyssers/spatula.git"
+    },
+    "keywords": [
+        "git",
+        "javascript",
+        "utils"
+    ],
+    "author": "Morilence",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Abyssers/spatula/issues"
+    },
+    "homepage": "https://github.com/Abyssers/spatula#readme",
+    "devDependencies": {
+        "@commitlint/cli": "^17.0.3",
+        "@commitlint/config-conventional": "^17.0.3",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-strip": "^2.1.0",
+        "@rollup/plugin-typescript": "^8.4.0",
+        "@types/node": "^18.7.14",
+        "@typescript-eslint/eslint-plugin": "^5.35.1",
+        "@typescript-eslint/parser": "^5.35.1",
+        "eslint": "^8.23.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.3",
+        "markdownlint": "^0.26.2",
+        "markdownlint-cli2": "^0.5.1",
+        "prettier": "^2.7.1",
+        "rollup": "^2.79.0",
+        "tslib": "^2.4.0",
+        "typescript": "^4.8.2"
+    }
+}
