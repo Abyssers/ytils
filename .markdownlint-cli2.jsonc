@@ -1,0 +1,23 @@
+/**
+ * options: https://github.com/DavidAnson/markdownlint/blob/main/README.md#options
+ */
+{
+    /**
+     * rules: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+     */
+    "config": {
+        "default": false,
+        "MD001": true,
+        "MD004": true,
+        "MD005": true,
+        "MD009": true,
+        "MD012": true
+    },
+
+    "fix": true,
+
+    /**
+     * inline configuration: https://github.com/DavidAnson/markdownlint/blob/main/README.md#configuration
+     */
+    "noInlineConfig": false
+}
