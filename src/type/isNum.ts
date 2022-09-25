@@ -26,5 +26,5 @@
  * // => false
  */
 export function isNum(value: any): boolean {
-    return value === +value || (Object.prototype.toString.call(value) === "[object Number]" && !Number.isNaN(+value));
+    return Object.prototype.toString.call(value) === "[object Number]" && !Number.isNaN(+value);
 }
