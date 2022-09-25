@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "declaration": false,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "preserveConstEnums": true,
+        "experimentalDecorators": true,
+        "sourceMap": false
+    },
+    "include": ["src/*.ts", "src/**/*.ts"]
+}
