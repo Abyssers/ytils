@@ -1,6 +1,3 @@
-import { isNum } from "./isNum";
-import { isInt } from "./isInt";
-
 /**
  * Checks whether value is a float or a floating-point number object.
  * @param {any} value The value to check
@@ -19,7 +16,7 @@ import { isInt } from "./isInt";
  * isFloat(Number.MAX_SAFE_INTEGER)
  * // => false
  *
- * isFloat("6")
+ * isFloat(Infinity)
  * // => false
  *
  * isFloat(NaN)
@@ -29,5 +26,10 @@ import { isInt } from "./isInt";
  * // => false
  */
 export function isFloat(value: any): boolean {
-    return isNum(value) && !isInt(value);
+    return (
+        Object.prototype.toString.call(value) === "[object Number]" &&
+        !Number.isNaN(+value) &&
+        !Number.isInteger(+value) &&
+        Number.isFinite(+value)
+    );
 }
