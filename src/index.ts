@@ -1,0 +1,13 @@
+export { isNum } from "./type/isNum";
+export { isNaN } from "./type/isNaN";
+export { isInt } from "./type/isInt";
+export { isFloat } from "./type/isFloat";
+export { isBool } from "./type/isBool";
+export { isStr } from "./type/isStr";
+export { isArr } from "./type/isArr";
+export { isFunc } from "./type/isFunc";
+export { isUndef } from "./type/isUndef";
+export { isNull } from "./type/isNull";
+export { isNil } from "./type/isNil";
+export { isObj } from "./type/isObj";
+export { isPlainObj } from "./type/isPlainObj";
