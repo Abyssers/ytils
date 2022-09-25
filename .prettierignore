@@ -1,0 +1,9 @@
+node_modules/
+dist/
+!.eslintrc.js
+!.prettierrc.js
+!.lintstagedrc.js
+!rollup.config.js
+!commitlint.config.js
+!*.json
+!*.yml
