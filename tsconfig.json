@@ -2,7 +2,12 @@
     "compilerOptions": {
         "target": "ESNext",
         "outDir": "dist",
+
         "moduleResolution": "node",
+        "esModuleInterop": true,
+
+        "types": ["node", "jest"],
+
         "declaration": false,
         "noImplicitAny": true,
         "noImplicitReturns": true,
