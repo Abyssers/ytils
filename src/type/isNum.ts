@@ -1,7 +1,7 @@
 /**
- * Checks whether value is a number or a number object.
+ * Checks whether value is a number or a number object that can participate in effective calculation.
  * @param {any} value The value to check
- * @returns {boolean} Returns true if value is a number or a number object, else false
+ * @returns {boolean} Returns true if value is a number or a number object that can participate in effective calculation, else false
  * @example
  *
  * isNum(6)
