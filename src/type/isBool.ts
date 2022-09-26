@@ -1,7 +1,7 @@
 /**
- * Checks whether value is a boolean.
+ * Checks whether value is a boolean or a Boolean object.
  * @param {any} value The value to check
- * @returns {boolean} Returns true if value is a boolean, else false
+ * @returns {boolean} Returns true if value is a boolean or a Boolean object, else false
  * @example
  *
  * isBool(true)

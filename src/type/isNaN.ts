@@ -1,9 +1,9 @@
 import { isNum } from "./isNum";
 
 /**
- * Checks whether value is neither a number nor a number object.
+ * Checks whether value is neither a number nor a Number object.
  * @param {any} value The value to check
- * @returns {boolean} Returns true if value is neither a number nor a number object, else false
+ * @returns {boolean} Returns true if value is neither a number nor a Number object, else false
  * @example
  *
  * isNaN(NaN)

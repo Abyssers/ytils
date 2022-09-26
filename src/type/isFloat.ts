@@ -1,7 +1,7 @@
 /**
- * Checks whether value is a float or a floating-point number object.
+ * Checks whether value is a float or a floating-point Number object.
  * @param {any} value The value to check
- * @returns {boolean} Returns true if value is a float or a floating-point number object, else false
+ * @returns {boolean} Returns true if value is a float or a floating-point Number object, else false
  * @example
  *
  * isFloat(6.66)

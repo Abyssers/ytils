@@ -1,7 +1,7 @@
 /**
- * Checks whether value is a string or a string object.
+ * Checks whether value is a string or a String object.
  * @param {any} value The value to check
- * @returns {boolean} Returns true if value is a string or a string object, else false
+ * @returns {boolean} Returns true if value is a string or a String object, else false
  * @example
  *
  * isStr("6")
