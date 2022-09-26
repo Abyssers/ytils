@@ -3,6 +3,9 @@
         "target": "ESNext",
         "outDir": "dist",
         "moduleResolution": "node",
+
+        "types": ["node", "jest"],
+
         "declaration": false,
         "noImplicitAny": true,
         "noImplicitReturns": true,
