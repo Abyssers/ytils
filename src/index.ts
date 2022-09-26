@@ -5,6 +5,7 @@ export { isFloat } from "./type/isFloat";
 export { isBool } from "./type/isBool";
 export { isStr } from "./type/isStr";
 export { isArr } from "./type/isArr";
+export { isArrLike } from "./type/isArrLike";
 export { isFunc } from "./type/isFunc";
 export { isUndef } from "./type/isUndef";
 export { isNull } from "./type/isNull";
