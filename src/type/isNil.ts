@@ -1,6 +1,3 @@
-import { isNull } from "./isNull";
-import { isUndef } from "./isUndef";
-
 /**
  * Checks whether value is undefined or null.
  * @param {any} value The value to check
@@ -17,5 +14,5 @@ import { isUndef } from "./isUndef";
  * // => false
  */
 export function isNil(value: any): boolean {
-    return isUndef(value) || isNull(value);
+    return value === undefined || value === null;
 }

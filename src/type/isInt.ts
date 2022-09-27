@@ -1,3 +1,5 @@
+import { tagOf, TypeTag } from "../core/tag";
+
 /**
  * Checks whether value is a integer or a integral Number object.
  * @param {any} value The value to check
@@ -26,5 +28,5 @@
  * // => false
  */
 export function isInt(value: any): boolean {
-    return Object.prototype.toString.call(value) === "[object Number]" && Number.isInteger(+value);
+    return tagOf(value) === TypeTag.Number && Number.isInteger(+value);
 }

@@ -1,3 +1,5 @@
+import { tagOf, TypeTag } from "../core/tag";
+
 /**
  * Checks whether value is a WeakMap object.
  * @param {any} value The value to check
@@ -11,5 +13,5 @@
  * // => true
  */
 export function isWeakMap(value: any): boolean {
-    return Object.prototype.toString.call(value) === "[object WeakMap]";
+    return tagOf(value) === TypeTag.WeakMap;
 }

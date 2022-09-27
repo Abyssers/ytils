@@ -1,3 +1,5 @@
+import { tagOf, TypeTag } from "../core/tag";
+
 /**
  * Checks whether value is a string or a String object.
  * @param {any} value The value to check
@@ -20,5 +22,5 @@
  * // => false
  */
 export function isStr(value: any): boolean {
-    return Object.prototype.toString.call(value) === "[object String]";
+    return tagOf(value) === TypeTag.String;
 }
