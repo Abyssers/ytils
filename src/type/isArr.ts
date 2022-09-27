@@ -1,3 +1,5 @@
+import { tagOf, TypeTag } from "../core/tag";
+
 /**
  * Checks whether value is an array.
  * @param {any} value The value to check
@@ -20,5 +22,5 @@
  * // => false
  */
 export function isArr(value: any): boolean {
-    return Object.prototype.toString.call(value) === "[object Array]";
+    return tagOf(value) === TypeTag.Array;
 }

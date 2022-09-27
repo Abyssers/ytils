@@ -1,3 +1,5 @@
+import { tagOf, TypeTag } from "../core/tag";
+
 /**
  * Checks whether value is a plain object.
  * @param {any} value The value to check
@@ -20,5 +22,5 @@
  * // => false
  */
 export function isPlainObj(value: any): boolean {
-    return Object.prototype.toString.call(value) === "[object Object]";
+    return tagOf(value) === TypeTag.Object;
 }

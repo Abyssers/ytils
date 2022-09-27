@@ -1,3 +1,5 @@
+import { tagOf, TypeTag } from "../core/tag";
+
 /**
  * Checks whether value is a number or a Number object that can participate in effective calculation.
  * @param {any} value The value to check
@@ -26,5 +28,5 @@
  * // => false
  */
 export function isNum(value: any): boolean {
-    return Object.prototype.toString.call(value) === "[object Number]" && !Number.isNaN(+value);
+    return tagOf(value) === TypeTag.Number && !Number.isNaN(+value);
 }

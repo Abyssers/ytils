@@ -1,3 +1,4 @@
+import { tagOf, TypeTag } from "../core/tag";
 import { isNum } from "./isNum";
 
 /**
@@ -25,5 +26,5 @@ import { isNum } from "./isNum";
  * // => false
  */
 export function isDate(value: any): boolean {
-    return Object.prototype.toString.call(value) === "[object Date]" && isNum(value.getTime());
+    return tagOf(value) === TypeTag.Date && isNum(value.getTime());
 }
