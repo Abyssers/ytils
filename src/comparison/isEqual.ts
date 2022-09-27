@@ -2,6 +2,7 @@ import { isBool } from "../type/isBool";
 import { isFunc } from "../type/isFunc";
 import { isNum } from "../type/isNum";
 import { isStr } from "../type/isStr";
+import { isStrictNaN } from "../type/isStrictNaN";
 import { isTypeEqual } from "./isTypeEqual";
 
 /**
@@ -28,7 +29,7 @@ import { isTypeEqual } from "./isTypeEqual";
  */
 export function isEqual(lhs: any, rhs: any): boolean {
     if (!isTypeEqual(lhs, rhs)) return false;
-    if (Number.isNaN(lhs) && Number.isNaN(rhs)) return true;
+    if (isStrictNaN(lhs) && isStrictNaN(rhs)) return true;
     if (isNum(lhs)) return +lhs === +rhs;
     if (isBool(lhs) || isStr(lhs)) return lhs == rhs;
     if (isFunc(lhs)) return lhs.toString() === rhs.toString();
