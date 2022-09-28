@@ -1,4 +1,5 @@
 import { isBool } from "../type/isBool";
+import { isDate } from "../type/isDate";
 import { isFunc } from "../type/isFunc";
 import { isNum } from "../type/isNum";
 import { isStr } from "../type/isStr";
@@ -15,8 +16,14 @@ import { isTypeEqual } from "./isTypeEqual";
  * isEqual(6, 6)
  * // true
  *
+ * isEqual(6, new Number(6))
+ * // true
+ *
  * isEqual("6", new String("6"))
  * // true
+ *
+ * isEqual(new Date(31415926), new Date(31415926))
+ * // => true
  *
  * isEqual(6, "6")
  * // => false
@@ -33,5 +40,6 @@ export function isEqual(lhs: any, rhs: any): boolean {
     if (isNum(lhs)) return +lhs === +rhs;
     if (isBool(lhs) || isStr(lhs)) return lhs == rhs;
     if (isFunc(lhs)) return lhs.toString() === rhs.toString();
+    if (isDate(lhs)) return lhs.getTime() === rhs.getTime();
     return lhs === rhs;
 }

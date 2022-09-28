@@ -1,9 +1,9 @@
 import { tagOf, TypeTag } from "../core/tag";
 
 /**
- * Checks whether value is a string in numeric form or a String object which can be transformed 2 a valid number.
+ * Checks whether value is a string in numeric form or a String object which can be transformed to a valid number.
  * @param {any} value The value to check
- * @returns {boolean} Returns true if value is a string in numeric form or a String object which can be transformed 2 a valid number, else false
+ * @returns {boolean} Returns true if value is a string in numeric form or a String object which can be transformed to a valid number, else false
  * @example
  *
  * isNumericStr("6")
