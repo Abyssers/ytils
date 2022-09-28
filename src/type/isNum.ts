@@ -1,9 +1,9 @@
 import { tagOf, TypeTag } from "../core/tag";
 
 /**
- * Checks whether value is a number or a Number object that can participate in effective calculation.
+ * Checks whether value is a valid number or a Number object that can be transformed to a valid number.
  * @param {any} value The value to check
- * @returns {boolean} Returns true if value is a number or a Number object that can participate in effective calculation, else false
+ * @returns {boolean} Returns true if value is a valid number or a Number object that can can be transformed to a valid number, else false
  * @example
  *
  * isNum(6)
