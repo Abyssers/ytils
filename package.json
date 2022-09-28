@@ -16,6 +16,7 @@
     "scripts": {
         "prepare": "husky install",
         "dev": "rollup -c -w",
+        "lint": "eslint --fix --ext .js,.ts && prettier --write .",
         "build": "rollup -c",
         "test": "jest"
     },
