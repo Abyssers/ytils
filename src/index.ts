@@ -11,6 +11,7 @@ export { isNaN } from "./type/isNaN";
 export { isNil } from "./type/isNil";
 export { isNull } from "./type/isNull";
 export { isNum } from "./type/isNum";
+export { isNumericStr } from "./type/isNumericStr";
 export { isObj } from "./type/isObj";
 export { isPlainObj } from "./type/isPlainObj";
 export { isSet } from "./type/isSet";
