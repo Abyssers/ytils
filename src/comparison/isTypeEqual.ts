@@ -1,4 +1,4 @@
-import { tagOf } from "../core/tag";
+import { tagOf } from "../.core/tag";
 
 /**
  * Checks whether lhs and rhs are of the same type.

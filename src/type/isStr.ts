@@ -1,4 +1,4 @@
-import { tagOf, TypeTag } from "../core/tag";
+import { tagOf, TypeTag } from "../.core/tag";
 
 /**
  * Checks whether value is a string or a String object.
