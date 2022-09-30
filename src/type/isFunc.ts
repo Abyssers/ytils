@@ -12,14 +12,17 @@ import { isNaN } from "./isNaN";
  * isFunc(() => {})
  * // => true
  *
- * isFunc(console.log)
+ * isFunc(async function () {})
  * // => true
  *
- * isFunc(Number)
+ * isFunc(async () => {})
  * // => true
  *
- * isFunc({})
- * // => false
+ * isFunc(function* () {})
+ * // => true
+ *
+ * isFunc(async function* () {})
+ * // => true
  */
 export function isFunc(value: any): boolean {
     return typeof value === "function" && isNaN(value.nodeType);
