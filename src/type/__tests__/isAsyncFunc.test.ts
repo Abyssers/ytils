@@ -1,19 +1,6 @@
 import { isAsyncFunc } from "../isAsyncFunc";
 
 describe("isAsyncFunc", () => {
-    test("asynchronous function", () => {
-        expect(
-            isAsyncFunc(async function () {
-                /* do something */
-            })
-        ).toBeTruthy();
-        expect(
-            isAsyncFunc(async () => {
-                /* do something */
-            })
-        ).toBeTruthy();
-    });
-
     test("synchronous function", () => {
         expect(isAsyncFunc(console.log)).toBeFalsy();
         expect(
@@ -26,6 +13,29 @@ describe("isAsyncFunc", () => {
                 /* do something */
             })
         ).toBeFalsy();
+        expect(
+            isAsyncFunc(function* () {
+                /* do something */
+            })
+        ).toBeFalsy();
+    });
+
+    test("asynchronous function", () => {
+        expect(
+            isAsyncFunc(async function () {
+                /* do something */
+            })
+        ).toBeTruthy();
+        expect(
+            isAsyncFunc(async () => {
+                /* do something */
+            })
+        ).toBeTruthy();
+        expect(
+            isAsyncFunc(async function* () {
+                /* do something */
+            })
+        ).toBeTruthy();
     });
 
     test("other types", () => {
