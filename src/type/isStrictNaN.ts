@@ -1,4 +1,4 @@
-import { tagOf, TypeTag } from "../core/tag";
+import { tagOf, TypeTag } from "../.core/tag";
 
 /**
  * Checks whether value is NaN or a Number object whose primitive value is NaN.
