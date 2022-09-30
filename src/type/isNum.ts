@@ -1,4 +1,4 @@
-import { tagOf, TypeTag } from "../core/tag";
+import { tagOf, TypeTag } from "../.core/tag";
 
 /**
  * Checks whether value is a valid number or a Number object that can be transformed to a valid number.
