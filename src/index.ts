@@ -24,4 +24,4 @@ export { isWeakSet } from "./type/isWeakSet";
 export { isDeepEqual } from "./comparison/isDeepEqual";
 export { isEqual } from "./comparison/isEqual";
 export { isStrictEqual } from "./comparison/isStrictEqual";
-export { isTypeEqual } from "./comparison/isTypeEqual";
+export { isTypeSame } from "./comparison/isTypeSame";
