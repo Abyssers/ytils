@@ -1,35 +1,48 @@
 import { isNum } from "../isNum";
 
-test("isNum", () => {
-    // number
-    expect(isNum(6)).toBe(true);
-    expect(isNum(6.6)).toBe(true);
-    expect(isNum(Infinity)).toBe(true);
-    expect(isNum(NaN)).toBe(false);
+describe("isNum", () => {
+    test("number literal", () => {
+        expect(isNum(0)).toBeTruthy();
+        expect(isNum(6)).toBeTruthy();
+        expect(isNum(-6)).toBeTruthy();
+        expect(isNum(6.6)).toBeTruthy();
+        expect(isNum(-6.6)).toBeTruthy();
+        expect(isNum(Number.MIN_SAFE_INTEGER)).toBeTruthy();
+        expect(isNum(Number.MAX_SAFE_INTEGER)).toBeTruthy();
+        expect(isNum(Infinity)).toBeTruthy();
 
-    // object of Number
-    expect(isNum(new Number(6))).toBe(true);
-    expect(isNum(new Number(6.6))).toBe(true);
-    expect(isNum(new Number(Infinity))).toBe(true);
-    expect(isNum(new Number(NaN))).toBe(false);
+        expect(isNum(NaN)).toBeFalsy();
+    });
 
-    // other types
-    expect(isNum(undefined)).toBe(false);
-    expect(isNum(null)).toBe(false);
-    expect(isNum(true)).toBe(false);
-    expect(isNum(new Boolean(false))).toBe(false);
-    expect(isNum("6")).toBe(false);
-    expect(isNum(new String(6))).toBe(false);
-    expect(isNum(Symbol(6))).toBe(false);
-    expect(isNum({})).toBe(false);
-    expect(isNum(new Object())).toBe(false);
-    expect(isNum([])).toBe(false);
-    expect(isNum(new Array(6))).toBe(false);
-    expect(isNum(console.log)).toBe(false);
-    expect(isNum(new Date())).toBe(false);
-    expect(isNum(new RegExp("6"))).toBe(false);
-    expect(isNum(new Map())).toBe(false);
-    expect(isNum(new WeakMap())).toBe(false);
-    expect(isNum(new Set())).toBe(false);
-    expect(isNum(new WeakSet())).toBe(false);
+    test("object of Number", () => {
+        expect(isNum(new Number(0))).toBeTruthy();
+        expect(isNum(new Number(6))).toBeTruthy();
+        expect(isNum(new Number(-6))).toBeTruthy();
+        expect(isNum(new Number(6.6))).toBeTruthy();
+        expect(isNum(new Number(-6.6))).toBeTruthy();
+        expect(isNum(new Number(Infinity))).toBeTruthy();
+
+        expect(isNum(new Number(NaN))).toBeFalsy();
+    });
+
+    test("other types", () => {
+        expect(isNum(undefined)).toBeFalsy();
+        expect(isNum(null)).toBeFalsy();
+        expect(isNum(true)).toBeFalsy();
+        expect(isNum(new Boolean(false))).toBeFalsy();
+        expect(isNum("6")).toBeFalsy();
+        expect(isNum(new String(6))).toBeFalsy();
+        expect(isNum(Symbol(6))).toBeFalsy();
+        expect(isNum({})).toBeFalsy();
+        expect(isNum(new Object())).toBeFalsy();
+        expect(isNum([])).toBeFalsy();
+        expect(isNum(new Array(6))).toBeFalsy();
+        expect(isNum(console.log)).toBeFalsy();
+        expect(isNum(new Date())).toBeFalsy();
+        expect(isNum(new RegExp("6"))).toBeFalsy();
+        expect(isNum(new Map())).toBeFalsy();
+        expect(isNum(new WeakMap())).toBeFalsy();
+        expect(isNum(new Set())).toBeFalsy();
+        expect(isNum(new WeakSet())).toBeFalsy();
+    });
 });
