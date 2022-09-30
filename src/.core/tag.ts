@@ -1,4 +1,5 @@
 export enum TypeTag {
+    Arguments = "[object Arguments]",
     Array = "[object Array]",
     ArrayBuffer = "[object ArrayBuffer]",
     AsyncFunction = "[object AsyncFunction]",

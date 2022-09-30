@@ -4,7 +4,7 @@ import { isFunc } from "../type/isFunc";
 import { isNum } from "../type/isNum";
 import { isStr } from "../type/isStr";
 import { isStrictNaN } from "../type/isStrictNaN";
-import { isTypeEqual } from "./isTypeEqual";
+import { isTypeSame } from "./isTypeSame";
 
 /**
  * Checks whether lhs and rhs are equal on primitive value and with the same type.
@@ -35,7 +35,7 @@ import { isTypeEqual } from "./isTypeEqual";
  * // => false
  */
 export function isEqual(lhs: any, rhs: any): boolean {
-    if (!isTypeEqual(lhs, rhs)) return false;
+    if (!isTypeSame(lhs, rhs)) return false;
     if (isStrictNaN(lhs) && isStrictNaN(rhs)) return true;
     if (isNum(lhs)) return +lhs === +rhs;
     if (isBool(lhs) || isStr(lhs)) return lhs == rhs;
