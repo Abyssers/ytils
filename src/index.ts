@@ -1,4 +1,5 @@
 export { isArr } from "./type/isArr";
+export { isArrBuffer } from "./type/isArrBuffer";
 export { isArrLike } from "./type/isArrLike";
 export { isAsyncFunc } from "./type/isAsyncFunc";
 export { isBool } from "./type/isBool";
