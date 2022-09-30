@@ -24,11 +24,11 @@ new Benchmark.Suite()
         isNumericStr_ByNumber([]);
     })
     .add("isNumericStr_ByRegExp", () => {
-        isNumericStr_ByNumber("6.6");
-        isNumericStr_ByNumber("6.66");
-        isNumericStr_ByNumber("6.666");
-        isNumericStr_ByNumber("6.6666");
-        isNumericStr_ByNumber("6.66666");
+        isNumericStr_ByRegExp("6.6");
+        isNumericStr_ByRegExp("6.66");
+        isNumericStr_ByRegExp("6.666");
+        isNumericStr_ByRegExp("6.6666");
+        isNumericStr_ByRegExp("6.66666");
         isNumericStr_ByRegExp(6);
         isNumericStr_ByRegExp(true);
         isNumericStr_ByRegExp("abc");
