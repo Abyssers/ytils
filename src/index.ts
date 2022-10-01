@@ -5,6 +5,7 @@ export { isArrLike } from "./type/isArrLike";
 export { isAsyncFunc } from "./type/isAsyncFunc";
 export { isAsyncGen } from "./type/isAsyncGen";
 export { isAsyncGenFunc } from "./type/isAsyncGenFunc";
+export { isBigInt } from "./type/isBigInt";
 export { isBool } from "./type/isBool";
 export { isDate } from "./type/isDate";
 export { isFloat } from "./type/isFloat";
