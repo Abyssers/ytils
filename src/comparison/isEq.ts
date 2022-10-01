@@ -3,7 +3,7 @@ import { isDate } from "../type/isDate";
 import { isFunc } from "../type/isFunc";
 import { isNum } from "../type/isNum";
 import { isStr } from "../type/isStr";
-import { isStrictNaN } from "../type/isStrictNaN";
+import { isStrictEq } from "./isStrictEq";
 import { isTypeEq } from "./isTypeEq";
 
 /**
@@ -35,8 +35,8 @@ import { isTypeEq } from "./isTypeEq";
  * // => false
  */
 export function isEq(lhs: any, rhs: any): boolean {
+    if (isStrictEq(lhs, rhs)) return true;
     if (!isTypeEq(lhs, rhs)) return false;
-    if (isStrictNaN(lhs) && isStrictNaN(rhs)) return true;
     if (isNum(lhs)) return +lhs === +rhs;
     if (isBool(lhs) || isStr(lhs)) return lhs == rhs;
     if (isFunc(lhs)) return lhs.toString() === rhs.toString();
