@@ -7,24 +7,24 @@ import { tagOf } from "../.core/tag";
  * @returns {boolean} Returns true if lhs and rhs are of the same type, else false
  * @example
  *
- * isTypeSame(6, 6)
+ * isTypeEq(6, 6)
  * // true
  *
- * isTypeSame(6, new Number(6))
+ * isTypeEq(6, new Number(6))
  * // => true
  *
- * isTypeSame("6", "6")
+ * isTypeEq("6", "6")
  * // true
  *
- * isTypeSame({}, {})
+ * isTypeEq({}, {})
  * // => true
  *
- * isTypeSame([], [])
+ * isTypeEq([], [])
  * // => true
  *
- * isTypeSame(6, "6")
+ * isTypeEq(6, "6")
  * // => false
  */
-export function isTypeSame(lhs: any, rhs: any): boolean {
+export function isTypeEq(lhs: any, rhs: any): boolean {
     return tagOf(lhs) === tagOf(rhs);
 }
