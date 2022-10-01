@@ -49,5 +49,5 @@ export function isDeepEq(lhs: any, rhs: any): boolean {
         }
         return true;
     }
-    return lhs === rhs;
+    return false;
 }
