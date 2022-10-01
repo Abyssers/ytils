@@ -28,7 +28,7 @@ export { isUndef } from "./type/isUndef";
 export { isWeakMap } from "./type/isWeakMap";
 export { isWeakSet } from "./type/isWeakSet";
 
-export { isDeepEqual } from "./comparison/isDeepEqual";
-export { isEqual } from "./comparison/isEqual";
-export { isStrictEqual } from "./comparison/isStrictEqual";
-export { isTypeSame } from "./comparison/isTypeSame";
+export { isDeepEq } from "./comparison/isDeepEq";
+export { isEq } from "./comparison/isEq";
+export { isStrictEq } from "./comparison/isStrictEq";
+export { isTypeEq } from "./comparison/isTypeEq";
