@@ -24,6 +24,7 @@ export { isPlainObj } from "./type/isPlainObj";
 export { isSet } from "./type/isSet";
 export { isStr } from "./type/isStr";
 export { isStrictNaN } from "./type/isStrictNaN";
+export { isTypedArr } from "./type/isTypedArr";
 export { isUndef } from "./type/isUndef";
 export { isWeakMap } from "./type/isWeakMap";
 export { isWeakSet } from "./type/isWeakSet";
