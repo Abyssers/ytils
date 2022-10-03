@@ -5,8 +5,6 @@ import { tagOf, TypeTag } from "../src/.core/tag";
 function isTypedArr_ByEnumeration(value: any): boolean {
     const tag = tagOf(value);
     return (
-        tag === TypeTag.BigInt64Array ||
-        tag === TypeTag.BigUint64Array ||
         tag === TypeTag.Float32Array ||
         tag === TypeTag.Float64Array ||
         tag === TypeTag.Int16Array ||
@@ -20,13 +18,11 @@ function isTypedArr_ByEnumeration(value: any): boolean {
 }
 
 function isTypedArr_ByRegExp(value: any): boolean {
-    return /^\[object (Float(32|64)|(I|Ui)nt(8|16|32)|Uint8Clamped|Big(I|Ui)nt64)Array\]$/.test(tagOf(value));
+    return /^\[object (Float(32|64)|(I|Ui)nt(8|16|32)|Uint8Clamped)Array\]$/.test(tagOf(value));
 }
 
 new Benchmark.Suite()
     .add("isTypedArr_ByEnumeration", () => {
-        isTypedArr_ByEnumeration(new BigInt64Array());
-        isTypedArr_ByEnumeration(new BigUint64Array());
         isTypedArr_ByEnumeration(new Float32Array());
         isTypedArr_ByEnumeration(new Float64Array());
         isTypedArr_ByEnumeration(new Int16Array());
@@ -36,6 +32,8 @@ new Benchmark.Suite()
         isTypedArr_ByEnumeration(new Uint32Array());
         isTypedArr_ByEnumeration(new Uint8Array());
         isTypedArr_ByEnumeration(new Uint8ClampedArray());
+        isTypedArr_ByEnumeration(new BigInt64Array());
+        isTypedArr_ByEnumeration(new BigUint64Array());
         isTypedArr_ByEnumeration("6.6");
         isTypedArr_ByEnumeration("6.66");
         isTypedArr_ByEnumeration("6.666");
@@ -49,8 +47,6 @@ new Benchmark.Suite()
         isTypedArr_ByEnumeration([]);
     })
     .add("isTypedArr_ByRegExp", () => {
-        isTypedArr_ByRegExp(new BigInt64Array());
-        isTypedArr_ByRegExp(new BigUint64Array());
         isTypedArr_ByRegExp(new Float32Array());
         isTypedArr_ByRegExp(new Float64Array());
         isTypedArr_ByRegExp(new Int16Array());
@@ -60,6 +56,8 @@ new Benchmark.Suite()
         isTypedArr_ByRegExp(new Uint32Array());
         isTypedArr_ByRegExp(new Uint8Array());
         isTypedArr_ByRegExp(new Uint8ClampedArray());
+        isTypedArr_ByRegExp(new BigInt64Array());
+        isTypedArr_ByRegExp(new BigUint64Array());
         isTypedArr_ByRegExp("6.6");
         isTypedArr_ByRegExp("6.66");
         isTypedArr_ByRegExp("6.666");
