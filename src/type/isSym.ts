@@ -1,0 +1,29 @@
+import { tagOf, TypeTag } from "../.core/tag";
+
+/**
+ * Checks whether value is a Symbol object.
+ * @param {any} value The value to check
+ * @returns {boolean} Returns true if value is a Symbol object, else false
+ * @example
+ *
+ * isSym(Symbol())
+ * // => true
+ *
+ * isSym(Symbol(6))
+ * // => true
+ *
+ * isSym(6)
+ * // => false
+ *
+ * isSym("6")
+ * // => false
+ *
+ * isSym({})
+ * // => false
+ *
+ * isSym([])
+ * // => false
+ */
+export function isSym(value: any): boolean {
+    return tagOf(value) === TypeTag.Promise;
+}
