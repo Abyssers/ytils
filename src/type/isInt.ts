@@ -1,9 +1,9 @@
 import { tagOf, TypeTag } from "../.core/tag";
 
 /**
- * Checks whether value is a integer or a integral Number object.
+ * Checks whether value is an integer or an integral Number object.
  * @param {any} value The value to check
- * @returns {boolean} Returns true if value is a integer or a integral Number object, else false
+ * @returns {boolean} Returns true if value is an integer or an integral Number object, else false
  * @example
  *
  * isInt(6)
