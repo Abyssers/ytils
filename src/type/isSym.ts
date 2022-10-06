@@ -25,5 +25,5 @@ import { tagOf, TypeTag } from "../.core/tag";
  * // => false
  */
 export function isSym(value: any): boolean {
-    return tagOf(value) === TypeTag.Promise;
+    return tagOf(value) === TypeTag.Symbol;
 }
