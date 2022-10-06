@@ -10,18 +10,10 @@ describe("isNil", () => {
     });
 
     test("other types", () => {
-        expect(isNil(new Number(0))).toBeFalsy();
         expect(isNil(new Number(6))).toBeFalsy();
-        expect(isNil(new Number(-6))).toBeFalsy();
-        expect(isNil(new Number(6.6))).toBeFalsy();
-        expect(isNil(new Number(-6.6))).toBeFalsy();
         expect(isNil(new Number(Infinity))).toBeFalsy();
         expect(isNil(new Number(NaN))).toBeFalsy();
-        expect(isNil(0)).toBeFalsy();
         expect(isNil(6)).toBeFalsy();
-        expect(isNil(-6)).toBeFalsy();
-        expect(isNil(6.6)).toBeFalsy();
-        expect(isNil(-6.6)).toBeFalsy();
         expect(isNil(Number.MIN_SAFE_INTEGER)).toBeFalsy();
         expect(isNil(Number.MAX_SAFE_INTEGER)).toBeFalsy();
         expect(isNil(Infinity)).toBeFalsy();

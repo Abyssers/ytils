@@ -7,18 +7,10 @@ describe("isNull", () => {
 
     test("other types", () => {
         expect(isNull(undefined)).toBeFalsy();
-        expect(isNull(new Number(0))).toBeFalsy();
         expect(isNull(new Number(6))).toBeFalsy();
-        expect(isNull(new Number(-6))).toBeFalsy();
-        expect(isNull(new Number(6.6))).toBeFalsy();
-        expect(isNull(new Number(-6.6))).toBeFalsy();
         expect(isNull(new Number(Infinity))).toBeFalsy();
         expect(isNull(new Number(NaN))).toBeFalsy();
-        expect(isNull(0)).toBeFalsy();
         expect(isNull(6)).toBeFalsy();
-        expect(isNull(-6)).toBeFalsy();
-        expect(isNull(6.6)).toBeFalsy();
-        expect(isNull(-6.6)).toBeFalsy();
         expect(isNull(Number.MIN_SAFE_INTEGER)).toBeFalsy();
         expect(isNull(Number.MAX_SAFE_INTEGER)).toBeFalsy();
         expect(isNull(Infinity)).toBeFalsy();
