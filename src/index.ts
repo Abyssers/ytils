@@ -23,12 +23,16 @@ export { isNum } from "./type/isNum";
 export { isNumericStr } from "./type/isNumericStr";
 export { isObj } from "./type/isObj";
 export { isPlainObj } from "./type/isPlainObj";
+export { isPromise } from "./type/isPromise";
+export { isRegExp } from "./type/isRegExp";
 export { isSet } from "./type/isSet";
 export { isStr } from "./type/isStr";
 export { isStrictNaN } from "./type/isStrictNaN";
+export { isSym } from "./type/isSym";
 export { isTypedArr } from "./type/isTypedArr";
 export { isUndef } from "./type/isUndef";
 export { isWeakMap } from "./type/isWeakMap";
+export { isWeakRef } from "./type/isWeakRef";
 export { isWeakSet } from "./type/isWeakSet";
 
 export { isDeepEq } from "./comparison/isDeepEq";
