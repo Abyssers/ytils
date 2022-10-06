@@ -1,6 +1,6 @@
 import Benchmark from "benchmark";
 import { green } from "colors";
-import { tagOf, TypeTag } from "../src/core/tag";
+import { tagOf, TypeTag } from "../src/.core/tag";
 
 function isFloat_OneBreath_ByPlus(value: any): boolean {
     return (

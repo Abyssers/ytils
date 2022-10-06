@@ -1,4 +1,5 @@
 export enum TypeTag {
+    Arguments = "[object Arguments]",
     Array = "[object Array]",
     ArrayBuffer = "[object ArrayBuffer]",
     AsyncFunction = "[object AsyncFunction]",
@@ -50,7 +51,7 @@ export enum TypeTag {
 /**
  * Gets the type-tag of value using Object.prototype.toString
  * @param value The value to check
- * @returns {string} The type-tag of value
+ * @returns {TypeTag} The type-tag of value
  * @example
  *
  * tagOf(6)
@@ -65,6 +66,6 @@ export enum TypeTag {
  * tagOf(new String(6))
  * // => "[object String]"
  */
-export function tagOf(value: any): string {
+export function tagOf(value: any): TypeTag {
     return Object.prototype.toString.call(value);
 }

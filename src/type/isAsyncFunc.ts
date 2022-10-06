@@ -9,9 +9,15 @@ import { tagOf, TypeTag } from "../.core/tag";
  * isAsyncFunc(async () => {})
  * // => true
  *
+ * isAsyncFunc(async function () {})
+ * // => true
+ *
+ * isAsyncFunc(async function* () {})
+ * // => true
+ *
  * isAsyncFunc(() => {})
  * // => false
  */
 export function isAsyncFunc(value: any): boolean {
-    return tagOf(value) === TypeTag.AsyncFunction;
+    return tagOf(value) === TypeTag.AsyncFunction || tagOf(value) === TypeTag.AsyncGeneratorFunction;
 }

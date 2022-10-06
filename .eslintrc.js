@@ -11,6 +11,20 @@ module.exports = {
 
     plugins: ["@typescript-eslint"],
     extends: ["eslint:recommended", "plugin:prettier/recommended", "plugin:@typescript-eslint/recommended"],
+    globals: {
+        BigInt: true,
+        BigInt64Array: true,
+        BigUint64Array: true,
+        Float32Array: true,
+        Float64Array: true,
+        Int16Array: true,
+        Int32Array: true,
+        Int8Array: true,
+        Uint16Array: true,
+        Uint32Array: true,
+        Uint8Array: true,
+        Uint8ClampedArray: true,
+    },
 
     parser: "@typescript-eslint/parser",
     parserOptions: {

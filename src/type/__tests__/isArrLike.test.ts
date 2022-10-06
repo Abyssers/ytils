@@ -1,12 +1,37 @@
 import { isArrLike } from "../isArrLike";
 
-test("isArrLike", () => {
-    // array like
-    expect(isArrLike([])).toBe(true);
-    expect(isArrLike(new Array(6))).toBe(true);
-    expect(isArrLike("6")).toBe(true);
+describe("isArrLike", () => {
+    test("object of Array", () => {
+        expect(isArrLike([])).toBeTruthy();
+        expect(isArrLike([6])).toBeTruthy();
+        expect(isArrLike(["6"])).toBeTruthy();
+        expect(isArrLike(new Array(6))).toBeTruthy();
+    });
 
-    // other types
-    expect(isArrLike({})).toBe(false);
-    expect(isArrLike(6)).toBe(false);
+    test("array-like", () => {
+        expect(isArrLike("666")).toBeTruthy();
+        expect(isArrLike(new String("666"))).toBeTruthy();
+        // Arguments
+        // NodeList
+        // StyleSheetList
+        // HTMLCollection
+        // DOMTokenList
+        // ...
+    });
+
+    test("other types", () => {
+        expect(isArrLike(undefined)).toBeFalsy();
+        expect(isArrLike(null)).toBeFalsy();
+        expect(isArrLike(6)).toBeFalsy();
+        expect(isArrLike(new Number(6.6))).toBeFalsy();
+        expect(isArrLike(Symbol(6))).toBeFalsy();
+        expect(isArrLike({})).toBeFalsy();
+        expect(isArrLike(new Object())).toBeFalsy();
+        expect(isArrLike(console.log)).toBeFalsy();
+        expect(isArrLike(new RegExp("6"))).toBeFalsy();
+        expect(isArrLike(new Map())).toBeFalsy();
+        expect(isArrLike(new WeakMap())).toBeFalsy();
+        expect(isArrLike(new Set())).toBeFalsy();
+        expect(isArrLike(new WeakSet())).toBeFalsy();
+    });
 });
