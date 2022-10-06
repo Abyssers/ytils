@@ -1,6 +1,6 @@
 {
     "name": "@abysser/spatula",
-    "version": "1.0.17",
+    "version": "1.0.18",
     "description": "A handy utensil for javascript cooking",
     "main": "dist/index.js",
     "type": "commonjs",
@@ -17,7 +17,7 @@
         "prepare": "husky install",
         "dev": "rollup -c -w",
         "lint": "eslint --fix --ext .js,.ts && prettier --write .",
-        "build": "rollup -c",
+        "build": "rollup -c && terser -c -m -o dist/index.js -- dist/index.js",
         "test": "jest"
     },
     "repository": {
@@ -59,6 +59,7 @@
         "markdownlint-cli2": "^0.5.1",
         "prettier": "^2.7.1",
         "rollup": "^2.79.0",
+        "terser": "^5.15.1",
         "ts-jest": "^29.0.2",
         "ts-node": "^10.9.1",
         "tslib": "^2.4.0",
