@@ -1,38 +1,31 @@
 import { isNumericStr } from "../isNumericStr";
 
 describe("isNumericStr", () => {
-    test("a string in numeric form", () => {
+    test("string literal", () => {
         expect(isNumericStr("6")).toBeTruthy();
         expect(isNumericStr("0")).toBeTruthy();
         expect(isNumericStr("-6")).toBeTruthy();
         expect(isNumericStr("6.66")).toBeTruthy();
         expect(isNumericStr("Infinity")).toBeTruthy();
+
+        expect(isNumericStr("abc")).toBeFalsy();
     });
 
-    test("object of string which can be transformed to a valid number", () => {
+    test("object of String", () => {
         expect(isNumericStr(new String(6))).toBeTruthy();
         expect(isNumericStr(new String(0))).toBeTruthy();
         expect(isNumericStr(new String(-6))).toBeTruthy();
         expect(isNumericStr(new String(6.66))).toBeTruthy();
         expect(isNumericStr(new String(Infinity))).toBeTruthy();
+
+        expect(isNumericStr(new String("abc"))).toBeFalsy();
     });
 
     test("other types", () => {
         expect(isNumericStr(undefined)).toBeFalsy();
-        expect(isNumericStr(new Number(0))).toBeFalsy();
         expect(isNumericStr(new Number(6))).toBeFalsy();
-        expect(isNumericStr(new Number(-6))).toBeFalsy();
-        expect(isNumericStr(new Number(6.6))).toBeFalsy();
-        expect(isNumericStr(new Number(-6.6))).toBeFalsy();
         expect(isNumericStr(new Number(Infinity))).toBeFalsy();
         expect(isNumericStr(new Number(NaN))).toBeFalsy();
-        expect(isNumericStr(0)).toBeFalsy();
-        expect(isNumericStr(6)).toBeFalsy();
-        expect(isNumericStr(-6)).toBeFalsy();
-        expect(isNumericStr(6.6)).toBeFalsy();
-        expect(isNumericStr(-6.6)).toBeFalsy();
-        expect(isNumericStr("six")).toBeFalsy();
-        expect(isNumericStr("abc")).toBeFalsy();
         expect(isNumericStr(Number.MIN_SAFE_INTEGER)).toBeFalsy();
         expect(isNumericStr(Number.MAX_SAFE_INTEGER)).toBeFalsy();
         expect(isNumericStr(Infinity)).toBeFalsy();
