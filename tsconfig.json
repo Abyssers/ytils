@@ -8,7 +8,7 @@
 
         "types": ["node", "jest"],
 
-        "declaration": false,
+        "declaration": true,
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "preserveConstEnums": true,
@@ -16,5 +16,5 @@
         "sourceMap": false
     },
     "include": ["src/**/*.ts"],
-    "exclude": ["*.test.ts"]
+    "exclude": ["src/**/*.test.ts"]
 }
