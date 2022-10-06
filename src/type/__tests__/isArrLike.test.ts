@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { isArrLike } from "../isArrLike";
 
 describe("isArrLike", () => {
@@ -11,12 +15,17 @@ describe("isArrLike", () => {
     test("array-like", () => {
         expect(isArrLike("666")).toBeTruthy();
         expect(isArrLike(new String("666"))).toBeTruthy();
-        // Arguments
-        // NodeList
-        // StyleSheetList
-        // HTMLCollection
-        // DOMTokenList
-        // ...
+        (function () {
+            /* eslint-disable-next-line prefer-rest-params */
+            expect(isArrLike(arguments)).toBeTruthy(); // Arguments
+        })();
+        expect(isArrLike(document.styleSheets)).toBeTruthy(); // StyleSheetList
+        expect(isArrLike(document.getElementsByTagName("body"))).toBeTruthy(); // HTMLCollection
+        expect(isArrLike(document.body.childNodes)).toBeTruthy(); // NodeList
+        expect(isArrLike(document.body.classList)).toBeTruthy(); // DOMTokenList
+        const fileInput = document.createElement("input");
+        fileInput.type = "file";
+        expect(isArrLike(fileInput.files)).toBeTruthy(); // FileList
     });
 
     test("other types", () => {
