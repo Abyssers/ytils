@@ -5,6 +5,8 @@ import { tagOf, TypeTag } from "../src/.internal/tag";
 function isTypedArr_ByEnumeration(value: any): boolean {
     const tag = tagOf(value);
     return (
+        tag === TypeTag.BigInt64Array ||
+        tag === TypeTag.BigUint64Array ||
         tag === TypeTag.Float32Array ||
         tag === TypeTag.Float64Array ||
         tag === TypeTag.Int16Array ||
@@ -18,7 +20,7 @@ function isTypedArr_ByEnumeration(value: any): boolean {
 }
 
 function isTypedArr_ByRegExp(value: any): boolean {
-    return /^\[object (Float(32|64)|(I|Ui)nt(8|16|32)|Uint8Clamped)Array\]$/.test(tagOf(value));
+    return /^\[object (Float(32|64)|(I|Ui)nt(8|16|32)|Uint8Clamped|Big(I|Ui)nt64)Array\]$/.test(tagOf(value));
 }
 
 new Benchmark.Suite()
