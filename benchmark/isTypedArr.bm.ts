@@ -1,6 +1,6 @@
 import Benchmark from "benchmark";
 import { green } from "colors";
-import { tagOf, TypeTag } from "../src/.core/tag";
+import { tagOf, TypeTag } from "../src/.internal/tag";
 
 function isTypedArr_ByEnumeration(value: any): boolean {
     const tag = tagOf(value);

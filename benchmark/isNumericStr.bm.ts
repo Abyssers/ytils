@@ -1,6 +1,6 @@
 import Benchmark from "benchmark";
 import { green } from "colors";
-import { tagOf, TypeTag } from "../src/.core/tag";
+import { tagOf, TypeTag } from "../src/.internal/tag";
 
 function isNumericStr_ByNumber(value: any): boolean {
     return tagOf(value) === TypeTag.String && !Number.isNaN(+value);
