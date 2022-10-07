@@ -13,5 +13,4 @@ type TypedArray =
     | Uint16Array
     | Uint32Array
     | Uint8Array
-    | ArrayBuffer
     | Uint8ClampedArray;
