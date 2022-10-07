@@ -6,6 +6,12 @@ import { tagOf, TypeTag } from "../.core/tag";
  * @returns {boolean} Returns true if value is a kind of TypedArray object, else false
  * @example
  *
+ * isTypedArr(new BigInt64Array())
+ * // => true
+ *
+ * isTypedArr(new BigUint64Array())
+ * // => true
+ *
  * isTypedArr(new Float32Array())
  * // => true
  *
@@ -38,16 +44,12 @@ import { tagOf, TypeTag } from "../.core/tag";
  *
  * isTypedArr(new Array())
  * // => false
- *
- * isTypedArr(new BigInt64Array())
- * // => false
- *
- * isTypedArr(new BigUint64Array())
- * // => false
  */
 export function isTypedArr(value: any): boolean {
     const tag = tagOf(value);
     return (
+        tag === TypeTag.BigInt64Array ||
+        tag === TypeTag.BigUint64Array ||
         tag === TypeTag.Float32Array ||
         tag === TypeTag.Float64Array ||
         tag === TypeTag.Int16Array ||
