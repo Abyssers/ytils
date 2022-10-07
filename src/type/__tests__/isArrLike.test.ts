@@ -21,6 +21,7 @@ describe("isArrLike", () => {
         })();
         expect(isArrLike(document.styleSheets)).toBeTruthy(); // StyleSheetList
         expect(isArrLike(document.getElementsByTagName("body"))).toBeTruthy(); // HTMLCollection
+        expect(isArrLike(document.body.style)).toBeTruthy(); // CSSStyleDeclaration
         expect(isArrLike(document.body.childNodes)).toBeTruthy(); // NodeList
         expect(isArrLike(document.body.classList)).toBeTruthy(); // DOMTokenList
         const fileInput = document.createElement("input");
