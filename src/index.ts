@@ -1,3 +1,11 @@
+export { isDeepEq } from "./comparison/isDeepEq";
+export { isEq } from "./comparison/isEq";
+export { isStrictEq } from "./comparison/isStrictEq";
+export { isTypeEq } from "./comparison/isTypeEq";
+
+export { firstOf } from "./reference/firstOf";
+export { lastOf } from "./reference/lastOf";
+
 export { isAnonFunc } from "./type/isAnonFunc";
 export { isArr } from "./type/isArr";
 export { isArrBuffer } from "./type/isArrBuffer";
@@ -34,8 +42,3 @@ export { isUndef } from "./type/isUndef";
 export { isWeakMap } from "./type/isWeakMap";
 export { isWeakRef } from "./type/isWeakRef";
 export { isWeakSet } from "./type/isWeakSet";
-
-export { isDeepEq } from "./comparison/isDeepEq";
-export { isEq } from "./comparison/isEq";
-export { isStrictEq } from "./comparison/isStrictEq";
-export { isTypeEq } from "./comparison/isTypeEq";
