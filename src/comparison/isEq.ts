@@ -21,6 +21,13 @@ import { isStrictEq } from "./isStrictEq";
  * isEq(new Date(31415926), new Date(31415926))
  * // => true
  *
+ * isEq(/abc/gi, new RegExp("abc", "gi"))
+ * // => true
+ *
+ * const sym = Symbol(6)
+ * isEq(sym, sym)
+ * // => true
+ *
  * isEq({}, {})
  * // => true
  *
@@ -31,11 +38,13 @@ import { isStrictEq } from "./isStrictEq";
  * // => false
  */
 export function isEq(lhs: any, rhs: any): boolean {
-    if (isStrictEq(lhs, rhs)) return true;
+    if (isStrictEq(lhs, rhs)) return true; // null, undefined, NaN, Symbol
     const tag = tagOf(lhs);
     if (tag !== tagOf(rhs)) return false;
     if (tag === TypeTag.Number || tag === TypeTag.Boolean || tag === TypeTag.String) return lhs == rhs;
     if (tag === TypeTag.Date) return isStrictEq(lhs.getTime(), rhs.getTime());
+    if (tag === TypeTag.RegExp)
+        return lhs.source === rhs.source && lhs.flags === rhs.flags && lhs.lastIndex === rhs.lastIndex;
     if (isFunc(lhs)) return lhs.toString() === rhs.toString();
     if (tag === TypeTag.Array) {
         if (lhs.length !== rhs.length) return false;
