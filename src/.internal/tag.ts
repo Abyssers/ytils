@@ -50,7 +50,7 @@ export enum TypeTag {
 
 /**
  * Gets the type-tag of value using Object.prototype.toString
- * @param value The value to check
+ * @param value The value to get from
  * @returns {TypeTag} The type-tag of value
  * @example
  *

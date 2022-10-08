@@ -12,6 +12,9 @@ import { tagOf, TypeTag } from "../.internal/tag";
  * isPlainObj(Object.create({}))
  * // => true
  *
+ * isPlainObj(Object.create(null))
+ * // => true
+ *
  * isPlainObj([])
  * // => false
  *
@@ -20,7 +23,10 @@ import { tagOf, TypeTag } from "../.internal/tag";
  *
  * isPlainObj(new String("6"))
  * // => false
+ *
+ * isPlainObj(new (class A { constructor() {} })())
+ * // => false
  */
 export function isPlainObj(value: any): boolean {
-    return tagOf(value) === TypeTag.Object;
+    return tagOf(value) === TypeTag.Object && (value.constructor === Object || Object.getPrototypeOf(value) === null);
 }
