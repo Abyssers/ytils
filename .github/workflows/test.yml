@@ -17,6 +17,10 @@ jobs:
         runs-on: ubuntu-latest
         environment: ABYSSERS_TEST_ENV
         steps:
+            - name: "[Print Context]"
+              env:
+                  GITHUB_CONTEXT: ${{ toJSON(github) }}
+              run: echo $GITHUB_CONTEXT
             - name: "[Download Repo]"
               uses: actions/checkout@v2
               with:
