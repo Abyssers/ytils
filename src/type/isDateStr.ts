@@ -1,4 +1,4 @@
-import { tagOf, TypeTag } from "../.core/tag";
+import { tagOf, TypeTag } from "../.internal/tag";
 import { isNum } from "./isNum";
 
 /**

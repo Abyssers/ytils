@@ -2,6 +2,8 @@ import { isTypedArr } from "../isTypedArr";
 
 describe("isTypedArr", () => {
     test("object of a kind of TypedArray", () => {
+        expect(isTypedArr(new BigInt64Array())).toBeTruthy();
+        expect(isTypedArr(new BigUint64Array())).toBeTruthy();
         expect(isTypedArr(new Float32Array())).toBeTruthy();
         expect(isTypedArr(new Float64Array())).toBeTruthy();
         expect(isTypedArr(new Int16Array())).toBeTruthy();
@@ -27,8 +29,6 @@ describe("isTypedArr", () => {
         expect(isTypedArr(new Object())).toBeFalsy();
         expect(isTypedArr([])).toBeFalsy();
         expect(isTypedArr(new Array(6))).toBeFalsy();
-        expect(isTypedArr(new BigInt64Array())).toBeFalsy();
-        expect(isTypedArr(new BigUint64Array())).toBeFalsy();
         expect(isTypedArr(console.log)).toBeFalsy();
         expect(isTypedArr(new Date())).toBeFalsy();
         expect(isTypedArr(new RegExp("6"))).toBeFalsy();

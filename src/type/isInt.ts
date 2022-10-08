@@ -1,4 +1,4 @@
-import { tagOf, TypeTag } from "../.core/tag";
+import { tagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is an integer or an integral Number object.

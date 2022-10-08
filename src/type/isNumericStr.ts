@@ -1,4 +1,4 @@
-import { tagOf, TypeTag } from "../.core/tag";
+import { tagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is a string in numeric form or a String object which can be transformed to a valid number.
