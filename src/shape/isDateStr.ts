@@ -1,5 +1,5 @@
 import { tagOf, TypeTag } from "../.internal/tag";
-import { isNum } from "./isNum";
+import { isNum } from "../type/isNum";
 
 /**
  * Checks whether value is a valid date-string or a String object that can be transformed to a valid date.

@@ -1,4 +1,4 @@
-import { isFunc } from "./isFunc";
+import { isFunc } from "../type/isFunc";
 
 /**
  * Checks whether value is an anonymous function.

@@ -3,15 +3,28 @@ import { isFunc } from "../type/isFunc";
 
 /**
  * Gets the clone of value
- * @param {any} value The value to be cloned
+ * @param value The value to be cloned
  * @returns The clone of value
+ * @example
+ *
+ * cloneOf(1)
+ * // => 1
+ *
+ * cloneOf(new String("1"))
+ * // => new String("1")
+ *
+ * cloneOf([6])
+ * // => [6]
+ *
+ * cloneOf({ age: 6 })
+ * // => { age: 6 }
  */
-export function cloneOf(value: any): any {
+export function cloneOf<T>(value: T): T | null {
     if (value == null) return value;
     const map = new WeakMap();
     return clone(value);
 
-    function clone(value: any) {
+    function clone(value: any): T | null {
         if (map.has(value)) {
             return map.get(value);
         }
