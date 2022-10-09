@@ -2,17 +2,25 @@ export { isEq } from "./comparison/isEq";
 export { isStrictEq } from "./comparison/isStrictEq";
 export { isTypeEq } from "./comparison/isTypeEq";
 
+export { cloneOf } from "./recreation/cloneOf";
+export { intxnOf } from "./recreation/intxnOf";
+export { unionOf } from "./recreation/unionOf";
+
 export { endProtoOf } from "./reference/endProtoOf";
 export { firstOf } from "./reference/firstOf";
 export { lastOf } from "./reference/lastOf";
 export { protoOf } from "./reference/protoOf";
 
-export { cloneOf } from "./recreation/cloneOf";
+export { isAnonFunc } from "./shape/isAnonFunc";
+export { isArrLike } from "./shape/isArrLike";
+export { isDateStr } from "./shape/isDateStr";
+export { isEmpty } from "./shape/isEmpty";
+export { isFloat } from "./shape/isFloat";
+export { isInt } from "./shape/isInt";
+export { isNumericStr } from "./shape/isNumericStr";
 
-export { isAnonFunc } from "./type/isAnonFunc";
 export { isArr } from "./type/isArr";
 export { isArrBuffer } from "./type/isArrBuffer";
-export { isArrLike } from "./type/isArrLike";
 export { isAsyncFunc } from "./type/isAsyncFunc";
 export { isAsyncGen } from "./type/isAsyncGen";
 export { isAsyncGenFunc } from "./type/isAsyncGenFunc";
@@ -21,17 +29,14 @@ export { isBool } from "./type/isBool";
 export { isDataView } from "./type/isDataView";
 export { isDate } from "./type/isDate";
 export { isErr } from "./type/isErr";
-export { isFloat } from "./type/isFloat";
 export { isFunc } from "./type/isFunc";
 export { isGen } from "./type/isGen";
 export { isGenFunc } from "./type/isGenFunc";
-export { isInt } from "./type/isInt";
 export { isMap } from "./type/isMap";
 export { isNaN } from "./type/isNaN";
 export { isNil } from "./type/isNil";
 export { isNull } from "./type/isNull";
 export { isNum } from "./type/isNum";
-export { isNumericStr } from "./type/isNumericStr";
 export { isObj } from "./type/isObj";
 export { isPlainObj } from "./type/isPlainObj";
 export { isPromise } from "./type/isPromise";
