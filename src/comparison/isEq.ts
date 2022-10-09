@@ -4,6 +4,7 @@ import { isStrictEq } from "./isStrictEq";
 
 /**
  * Checks whether lhs and rhs are equal deeply on primitive value and with the same type.
+ * Notice: Perform strict comparisons for functions and symbols
  * @param {any} lhs The left-hand side
  * @param {any} rhs The right-hand side
  * @returns {boolean} Returns true if lhs and rhs are equal deeply on primitive value and with the same type, else false
@@ -38,14 +39,15 @@ import { isStrictEq } from "./isStrictEq";
  * // => false
  */
 export function isEq(lhs: any, rhs: any): boolean {
-    if (isStrictEq(lhs, rhs)) return true; // null, undefined, NaN, Symbol
+    if (isStrictEq(lhs, rhs)) return true; // for null, undefined and NaN
     const tag = tagOf(lhs);
     if (tag !== tagOf(rhs)) return false;
-    if (tag === TypeTag.Number || tag === TypeTag.Boolean || tag === TypeTag.String) return lhs == rhs;
+    if (tag === TypeTag.Number || tag === TypeTag.Boolean || tag === TypeTag.String)
+        return lhs.valueOf() === rhs.valueOf();
     if (tag === TypeTag.Date) return isStrictEq(lhs.getTime(), rhs.getTime());
     if (tag === TypeTag.RegExp)
         return lhs.source === rhs.source && lhs.flags === rhs.flags && lhs.lastIndex === rhs.lastIndex;
-    if (isFunc(lhs)) return lhs.toString() === rhs.toString();
+    if (tag === TypeTag.Symbol || isFunc(lhs)) return false;
     if (tag === TypeTag.Array) {
         if (lhs.length !== rhs.length) return false;
         for (let i = lhs.length - 1; i >= 0; i--) {
