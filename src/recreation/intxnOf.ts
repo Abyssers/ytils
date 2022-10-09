@@ -3,7 +3,7 @@ import { isEq } from "../comparison/isEq";
 
 /**
  * Gets the intersection of values. (using isEq to judge equality)
- * @param {T | T[]} values Values
+ * @param {(T | T[])[]} values Values
  * @returns {T[]} Returns the intersection of values
  * @example
  *

@@ -2,9 +2,9 @@ import { isArr } from "../type/isArr";
 import { isEq } from "../comparison/isEq";
 
 /**
- * Gets the intersection of values. (using isEq to judge equality)
- * @param {any[]} values Values
- * @returns Returns the intersection of values
+ * Gets the union of values. (using isEq to judge equality)
+ * @param {(T | T[])[]} values Values
+ * @returns {T[]} Returns the union of values
  * @example
  *
  * unionOf([1, 2, 3], [2, 3, 4])
