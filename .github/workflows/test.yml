@@ -20,9 +20,10 @@ jobs:
             - name: "[Download Repo]"
               env:
                   GITHUB_CONTEXT: ${{ toJSON(github) }}
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
               with:
-                  ref: main
+                  repository: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name || github.repository }}
+                  ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.ref || 'main' }}
             - name: "[Setup NodeJs]"
               uses: actions/setup-node@v3
               with:
