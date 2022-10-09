@@ -1,6 +1,7 @@
 import { tagOf, TypeTag } from "../.internal/tag";
 import { isFunc } from "../type/isFunc";
 import { isStrictEq } from "./isStrictEq";
+import { isTypeEq } from "./isTypeEq";
 
 /**
  * Checks whether lhs and rhs are equal deeply on primitive value and with the same type.
@@ -39,9 +40,9 @@ import { isStrictEq } from "./isStrictEq";
  * // => false
  */
 export function isEq(lhs: any, rhs: any): boolean {
+    if (!isTypeEq(lhs, rhs)) return false;
     if (isStrictEq(lhs, rhs)) return true; // for null, undefined and NaN
     const tag = tagOf(lhs);
-    if (tag !== tagOf(rhs)) return false;
     if (tag === TypeTag.Number || tag === TypeTag.Boolean || tag === TypeTag.String)
         return lhs.valueOf() === rhs.valueOf();
     if (tag === TypeTag.Date) return isStrictEq(lhs.getTime(), rhs.getTime());

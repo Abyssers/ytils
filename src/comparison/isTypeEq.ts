@@ -1,5 +1,3 @@
-import { tagOf } from "../.internal/tag";
-
 /**
  * Checks whether lhs and rhs are of the same type.
  * @param {any} lhs The left-hand side
@@ -26,5 +24,6 @@ import { tagOf } from "../.internal/tag";
  * // => false
  */
 export function isTypeEq(lhs: any, rhs: any): boolean {
-    return tagOf(lhs) === tagOf(rhs);
+    if (lhs == null || rhs == null) return lhs === rhs;
+    return lhs.constructor === rhs.constructor;
 }
