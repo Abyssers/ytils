@@ -7,6 +7,8 @@ export { firstOf } from "./reference/firstOf";
 export { lastOf } from "./reference/lastOf";
 export { protoOf } from "./reference/protoOf";
 
+export { cloneOf } from "./recreation/cloneOf";
+
 export { isAnonFunc } from "./type/isAnonFunc";
 export { isArr } from "./type/isArr";
 export { isArrBuffer } from "./type/isArrBuffer";
