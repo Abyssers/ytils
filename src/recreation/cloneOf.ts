@@ -28,19 +28,19 @@ export function cloneOf(value: any): any {
         )
             return new value.constructor(value);
         if (tag === TypeTag.RegExp) {
-            const clone = new RegExp(value);
-            clone.lastIndex = (value as RegExp).lastIndex;
-            return clone;
+            const cloned = new RegExp(value);
+            cloned.lastIndex = (value as RegExp).lastIndex;
+            return cloned;
         }
         if (tag === TypeTag.Symbol || isFunc(value)) return value;
-        if (tag === TypeTag.Array) return value.map((item: any) => cloneOf(item));
+        if (tag === TypeTag.Array) return value.map((item: any) => clone(item));
         if (typeof tag === "object") {
-            const clone = Object.create(Object.getPrototypeOf(value));
+            const cloned = Object.create(Object.getPrototypeOf(value));
             const keys = Object.keys(value);
             for (let i = keys.length - 1; i >= 0; i--) {
-                clone[keys[i]] = clone(value[keys[i]]);
+                cloned[keys[i]] = clone(value[keys[i]]);
             }
-            return clone;
+            return cloned;
         }
         return null;
     }
