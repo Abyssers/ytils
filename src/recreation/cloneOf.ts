@@ -46,7 +46,7 @@ export function cloneOf(value: any): any {
             map.set(value, cloned);
             return cloned;
         }
-        if (typeof tag === "object") {
+        if (typeof value === "object") {
             const cloned = Object.create(Object.getPrototypeOf(value));
             const keys = Object.keys(value);
             for (let i = keys.length - 1; i >= 0; i--) {
