@@ -8,16 +8,20 @@ import { isFunc } from "../type/isFunc";
  */
 export function cloneOf(value: any): any {
     if (value == null) return value;
-    const set = new WeakSet();
+    const map = new WeakMap();
     return clone(value);
 
     function clone(value: any) {
-        if (set.has(value)) {
-            return value;
+        if (map.has(value)) {
+            return map.get(value);
         }
         const tag = tagOf(value);
-        if (tag === TypeTag.Number || tag === TypeTag.Boolean || tag === TypeTag.String)
-            return typeof value !== "object" ? value : new value.constructor(value);
+        if (tag === TypeTag.Number || tag === TypeTag.Boolean || tag === TypeTag.String) {
+            if (typeof value !== "object") return value; // literal
+            const cloned = new value.constructor(value);
+            map.set(value, cloned);
+            return cloned;
+        }
         if (
             tag === TypeTag.Date ||
             tag === TypeTag.Error ||
@@ -25,21 +29,30 @@ export function cloneOf(value: any): any {
             tag === TypeTag.Set ||
             tag === TypeTag.WeakMap ||
             tag === TypeTag.WeakSet
-        )
-            return new value.constructor(value);
-        if (tag === TypeTag.RegExp) {
-            const cloned = new RegExp(value);
-            cloned.lastIndex = (value as RegExp).lastIndex;
+        ) {
+            const cloned = new value.constructor(value);
+            map.set(value, cloned);
             return cloned;
         }
-        if (tag === TypeTag.Symbol || isFunc(value)) return value;
-        if (tag === TypeTag.Array) return value.map((item: any) => clone(item));
+        if (tag === TypeTag.RegExp) {
+            const cloned = new value.constructor(value);
+            cloned.lastIndex = value.lastIndex;
+            map.set(value, cloned);
+            return cloned;
+        }
+        if (tag === TypeTag.Symbol || isFunc(value)) return value; // preserve uniqueness
+        if (tag === TypeTag.Array) {
+            const cloned = value.map((item: any) => clone(item));
+            map.set(value, cloned);
+            return cloned;
+        }
         if (typeof tag === "object") {
             const cloned = Object.create(Object.getPrototypeOf(value));
             const keys = Object.keys(value);
             for (let i = keys.length - 1; i >= 0; i--) {
                 cloned[keys[i]] = clone(value[keys[i]]);
             }
+            map.set(value, cloned);
             return cloned;
         }
         return null;

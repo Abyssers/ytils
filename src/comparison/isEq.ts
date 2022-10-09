@@ -42,7 +42,8 @@ export function isEq(lhs: any, rhs: any): boolean {
     if (isStrictEq(lhs, rhs)) return true; // for null, undefined and NaN
     const tag = tagOf(lhs);
     if (tag !== tagOf(rhs)) return false;
-    if (tag === TypeTag.Number || tag === TypeTag.Boolean || tag === TypeTag.String) return lhs == rhs;
+    if (tag === TypeTag.Number || tag === TypeTag.Boolean || tag === TypeTag.String)
+        return lhs.valueOf() === rhs.valueOf();
     if (tag === TypeTag.Date) return isStrictEq(lhs.getTime(), rhs.getTime());
     if (tag === TypeTag.RegExp)
         return lhs.source === rhs.source && lhs.flags === rhs.flags && lhs.lastIndex === rhs.lastIndex;
