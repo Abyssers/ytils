@@ -1,4 +1,3 @@
-import { isArr } from "../type/isArr";
 import { isEq } from "../comparison/isEq";
 
 /**
@@ -19,7 +18,7 @@ import { isEq } from "../comparison/isEq";
 export function unionOf<T>(...values: (T | T[])[]): T[] {
     const sylloge: T[] = [];
     for (let i = values.length - 1; i >= 0; i--) {
-        sylloge.push(...(isArr(values[i]) ? (values[i] as T[]) : [values[i] as T]));
+        sylloge.push(...(Array.isArray(values[i]) ? (values[i] as T[]) : [values[i] as T]));
     }
     return sylloge.filter((itemL, idx) => sylloge.findIndex(itemR => isEq(itemL, itemR)) === idx);
 }
