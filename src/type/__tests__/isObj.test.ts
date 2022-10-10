@@ -5,16 +5,6 @@ describe("isObj", () => {
         expect(isObj(new Number(6))).toBeTruthy();
         expect(isObj(new Number(Infinity))).toBeTruthy();
         expect(isObj(new Number(NaN))).toBeTruthy();
-        expect(
-            isObj(() => {
-                /* do something */
-            })
-        ).toBeTruthy();
-        expect(
-            isObj(async function* () {
-                /* do something */
-            })
-        ).toBeTruthy();
         expect(isObj(new Boolean(false))).toBeTruthy();
         expect(isObj(new String(6))).toBeTruthy();
         expect(isObj({})).toBeTruthy();
@@ -23,6 +13,29 @@ describe("isObj", () => {
         expect(isObj(new ArrayBuffer(8))).toBeTruthy();
         expect(isObj(new Array(6))).toBeTruthy();
         expect(isObj(console.log)).toBeTruthy();
+        expect(
+            isObj(function () {
+                /* do something */
+            })
+        ).toBeTruthy();
+        expect(() => {
+            /* do something */
+        }).toBeTruthy();
+        expect(
+            isObj(async function () {
+                /* do something */
+            })
+        ).toBeTruthy();
+        expect(
+            isObj(async function* () {
+                /* do something */
+            })
+        ).toBeTruthy();
+        expect(
+            isObj(async () => {
+                /* do something */
+            })
+        ).toBeTruthy();
         expect(isObj(new Date())).toBeTruthy();
         expect(isObj(new RegExp("6"))).toBeTruthy();
         expect(isObj(new Map())).toBeTruthy();
