@@ -19,6 +19,7 @@ export { isEmpty } from "./shape/isEmpty";
 export { isFloat } from "./shape/isFloat";
 export { isInt } from "./shape/isInt";
 export { isNumericStr } from "./shape/isNumericStr";
+export { isRGBStr } from "./shape/isRGBStr";
 
 export { isArr } from "./type/isArr";
 export { isArrBuffer } from "./type/isArrBuffer";
