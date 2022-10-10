@@ -10,6 +10,7 @@ export { endProtoOf } from "./reference/endProtoOf";
 export { firstOf } from "./reference/firstOf";
 export { lastOf } from "./reference/lastOf";
 export { protoOf } from "./reference/protoOf";
+export { randomOf } from "./reference/randomOf";
 
 export { isAnonFunc } from "./shape/isAnonFunc";
 export { isArrLike } from "./shape/isArrLike";
