@@ -2,7 +2,7 @@
  * Checks whether lhs and rhs are equal by ===, but in addition to NaN.
  * @param {any} lhs The left-hand side
  * @param {any} rhs The right-hand side
- * @returns {boolean} Returns true if lhs === rhs, else false
+ * @returns {boolean} Returns true if lhs === rhs or both lhs and rhs are NaN, else false
  * @example
  *
  * isStrictEq(6, 6)
