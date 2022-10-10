@@ -1,5 +1,3 @@
-import { tagOf, TypeTag } from "../.internal/tag";
-
 /**
  * Checks whether value is an Array object.
  * @param {any} value The value to check
@@ -22,5 +20,5 @@ import { tagOf, TypeTag } from "../.internal/tag";
  * // => false
  */
 export function isArr(value: any): boolean {
-    return tagOf(value) === TypeTag.Array;
+    return Array.isArray(value);
 }
