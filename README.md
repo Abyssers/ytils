@@ -9,3 +9,31 @@
 </p>
 
 A handy utensil for javascript cooking
+
+## Quik Start
+
+```bash
+npm install @abysser/spatula
+```
+
+## Usage
+
+CommonJs:
+
+```js
+const { isEq } = require("@abysser/spatula");
+console.log(isEq({ name: "xavier" }, { name: "xavier" })); // => true
+```
+
+ES Module:
+
+```js
+import { isEq } from "@abysser/spatula";
+console.log(isEq({ name: "xavier" }, { name: "xavier" })); // => true
+```
+
+## License
+
+[MIT](./LICENSE)
+
+Copyright 2022 Abyssers
