@@ -5,6 +5,7 @@ export { isTypeEq } from "./comparison/isTypeEq";
 export { cloneOf } from "./recreation/cloneOf";
 export { intxnOf } from "./recreation/intxnOf";
 export { unionOf } from "./recreation/unionOf";
+export { wordsOf } from "./recreation/wordsOf";
 
 export { endProtoOf } from "./reference/endProtoOf";
 export { firstOf } from "./reference/firstOf";
