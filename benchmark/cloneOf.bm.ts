@@ -3,12 +3,12 @@ import { green } from "colors";
 import { tagOf, TypeTag } from "../src/.internal/tag";
 import { isFunc } from "../src/type/isFunc";
 
-function cloneOf_ByMap_ArrayByTag<T>(value: T): T | null {
+function cloneOf_ByMap_ArrayByTag<T>(value: T): T {
     if (value == null) return value;
     const map = new WeakMap();
     return clone(value);
 
-    function clone(value: any): T | null {
+    function clone(value: any): T {
         if (map.has(value)) {
             return map.get(value);
         }
@@ -52,16 +52,16 @@ function cloneOf_ByMap_ArrayByTag<T>(value: T): T | null {
             map.set(value, cloned);
             return cloned;
         }
-        return null;
+        return value;
     }
 }
 
-function cloneOf_ByMap_ArrayByNative<T>(value: T): T | null {
+function cloneOf_ByMap_ArrayByNative<T>(value: T): T {
     if (value == null) return value;
     const map = new WeakMap();
     return clone(value);
 
-    function clone(value: any): T | null {
+    function clone(value: any): T {
         if (map.has(value)) {
             return map.get(value);
         }
@@ -105,16 +105,16 @@ function cloneOf_ByMap_ArrayByNative<T>(value: T): T | null {
             map.set(value, cloned);
             return cloned;
         }
-        return null;
+        return value;
     }
 }
 
-function cloneOf_ByFor_ArrayByTag<T>(value: T): T | null {
+function cloneOf_ByFor_ArrayByTag<T>(value: T): T {
     if (value == null) return value;
     const map = new WeakMap();
     return clone(value);
 
-    function clone(value: any): T | null {
+    function clone(value: any): T {
         if (map.has(value)) {
             return map.get(value);
         }
@@ -161,16 +161,16 @@ function cloneOf_ByFor_ArrayByTag<T>(value: T): T | null {
             map.set(value, cloned);
             return cloned;
         }
-        return null;
+        return value;
     }
 }
 
-function cloneOf_ByFor_ArrayByNative<T>(value: T): T | null {
+function cloneOf_ByFor_ArrayByNative<T>(value: T): T {
     if (value == null) return value;
     const map = new WeakMap();
     return clone(value);
 
-    function clone(value: any): T | null {
+    function clone(value: any): T {
         if (map.has(value)) {
             return map.get(value);
         }
@@ -217,7 +217,7 @@ function cloneOf_ByFor_ArrayByNative<T>(value: T): T | null {
             map.set(value, cloned);
             return cloned;
         }
-        return null;
+        return value;
     }
 }
 

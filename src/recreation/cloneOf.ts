@@ -19,12 +19,12 @@ import { isFunc } from "../type/isFunc";
  * cloneOf({ age: 6 })
  * // => { age: 6 }
  */
-export function cloneOf<T>(value: T): T | null {
+export function cloneOf<T>(value: T): T {
     if (value == null) return value;
     const map = new WeakMap();
     return clone(value);
 
-    function clone(value: any): T | null {
+    function clone(value: any): T {
         if (map.has(value)) {
             return map.get(value);
         }
@@ -71,6 +71,6 @@ export function cloneOf<T>(value: T): T | null {
             map.set(value, cloned);
             return cloned;
         }
-        return null;
+        return value;
     }
 }
