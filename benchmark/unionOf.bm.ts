@@ -1,11 +1,10 @@
 import Benchmark from "benchmark";
 import { green } from "colors";
-import { isArr } from "../src/type/isArr";
 import { isEq } from "../src/comparison/isEq";
 
 function unionOf_ByReduce<T>(...values: (T | T[])[]): T[] {
     const sylloge = values.reduce(
-        (sylloge: T[], value: T | T[]) => [...sylloge, ...(isArr(value) ? (value as T[]) : [value as T])],
+        (sylloge: T[], value: T | T[]) => [...sylloge, ...(Array.isArray(value) ? (value as T[]) : [value as T])],
         [] as T[]
     ) as T[];
     return sylloge.filter((itemL, idx) => sylloge.findIndex(itemR => isEq(itemL, itemR)) === idx);
@@ -14,7 +13,7 @@ function unionOf_ByReduce<T>(...values: (T | T[])[]): T[] {
 function unionOf_ByFor_UsingPush<T>(...values: (T | T[])[]): T[] {
     const sylloge: T[] = [];
     for (let i = values.length - 1; i >= 0; i--) {
-        sylloge.push(...(isArr(values[i]) ? (values[i] as T[]) : [values[i] as T]));
+        sylloge.push(...(Array.isArray(values[i]) ? (values[i] as T[]) : [values[i] as T]));
     }
     return sylloge.filter((itemL, idx) => sylloge.findIndex(itemR => isEq(itemL, itemR)) === idx);
 }
@@ -22,7 +21,7 @@ function unionOf_ByFor_UsingPush<T>(...values: (T | T[])[]): T[] {
 function unionOf_ByFor_UsingRestOp<T>(...values: (T | T[])[]): T[] {
     let sylloge: T[] = [];
     for (let i = values.length - 1; i >= 0; i--) {
-        sylloge = [...sylloge, ...(isArr(values[i]) ? (values[i] as T[]) : [values[i] as T])];
+        sylloge = [...sylloge, ...(Array.isArray(values[i]) ? (values[i] as T[]) : [values[i] as T])];
     }
     return sylloge.filter((itemL, idx) => sylloge.findIndex(itemR => isEq(itemL, itemR)) === idx);
 }
