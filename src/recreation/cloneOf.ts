@@ -19,12 +19,12 @@ import { isFunc } from "../type/isFunc";
  * cloneOf({ age: 6 })
  * // => { age: 6 }
  */
-export function cloneOf<T>(value: T): T | null {
+export function cloneOf<T>(value: T): T {
     if (value == null) return value;
     const map = new WeakMap();
     return clone(value);
 
-    function clone(value: any): T | null {
+    function clone(value: any): T {
         if (map.has(value)) {
             return map.get(value);
         }
@@ -55,9 +55,12 @@ export function cloneOf<T>(value: T): T | null {
         }
         if (tag === TypeTag.Symbol || isFunc(value)) return value; // preserve uniqueness
         if (tag === TypeTag.Array) {
-            const cloned = value.map((item: any) => clone(item));
+            const cloned = new Array(value.length);
+            for (let i = value.length - 1; i >= 0; i--) {
+                cloned[i] = clone(value[i]);
+            }
             map.set(value, cloned);
-            return cloned;
+            return cloned as T;
         }
         if (typeof value === "object") {
             const cloned = Object.create(Object.getPrototypeOf(value));
@@ -68,6 +71,6 @@ export function cloneOf<T>(value: T): T | null {
             map.set(value, cloned);
             return cloned;
         }
-        return null;
+        return value;
     }
 }
