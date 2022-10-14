@@ -1,19 +1,19 @@
-# spatula
+# ytils
 
 <p align="left">
-  <a><img src="https://img.shields.io/github/license/Abyssers/spatula"></a>
-  <a><img src="https://img.shields.io/github/workflow/status/Abyssers/spatula/publish"></a>
-  <a><img src="https://img.shields.io/github/issues/Abyssers/spatula"></a>
-  <a><img src="https://img.shields.io/github/forks/Abyssers/spatula"></a>
-  <a><img src="https://img.shields.io/github/stars/Abyssers/spatula"></a>
+  <a><img src="https://img.shields.io/github/license/Abyssers/ytils"></a>
+  <a><img src="https://img.shields.io/github/workflow/status/Abyssers/ytils/publish"></a>
+  <a><img src="https://img.shields.io/github/issues/Abyssers/ytils"></a>
+  <a><img src="https://img.shields.io/github/forks/Abyssers/ytils"></a>
+  <a><img src="https://img.shields.io/github/stars/Abyssers/ytils"></a>
 </p>
 
-A handy utensil for javascript cooking
+A collection of handy utilities for js/ts programing
 
 ## Quik Start
 
 ```bash
-npm install @abysser/spatula
+npm install ytils
 ```
 
 ## Usage
@@ -21,14 +21,14 @@ npm install @abysser/spatula
 CommonJs:
 
 ```js
-const { isEq } = require("@abysser/spatula");
+const { isEq } = require("ytils");
 console.log(isEq({ name: "xavier" }, { name: "xavier" })); // => true
 ```
 
 ES Module:
 
 ```js
-import { isEq } from "@abysser/spatula";
+import { isEq } from "ytils";
 console.log(isEq({ name: "xavier" }, { name: "xavier" })); // => true
 ```
 
