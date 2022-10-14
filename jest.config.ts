@@ -14,7 +14,7 @@ export default {
 
     moduleFileExtensions: ["js", "mjs", "cjs", "jsx", "ts", "tsx"],
 
-    testMatch: ["<rootDir>/src/**/__tests__/**/*.[jt]s?(x)", "<rootDir>/src/**/?(*.)+(spec|test).[tj]s?(x)"],
+    testMatch: ["<rootDir>/packages/**/__tests__/**/*.[jt]s?(x)", "<rootDir>/packages/**/?(*.)+(spec|test).[tj]s?(x)"],
     testPathIgnorePatterns: ["node_modules/"],
 
     transformIgnorePatterns: ["node_modules/"],
