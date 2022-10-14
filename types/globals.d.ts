@@ -14,3 +14,8 @@ type TypedArray =
     | Uint32Array
     | Uint8Array
     | Uint8ClampedArray;
+
+/**
+ * [type level equal operator](https://github.com/microsoft/TypeScript/issues/27024#issuecomment-421529650)
+ */
+// type Equals<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ? 1 : 2 ? true : false;

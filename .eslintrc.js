@@ -12,11 +12,14 @@ module.exports = {
     plugins: ["@typescript-eslint"],
     extends: ["eslint:recommended", "plugin:prettier/recommended", "plugin:@typescript-eslint/recommended"],
     globals: {
+        AsyncGenerator: true,
+        AsyncGeneratorFunction: true,
         BigInt: true,
         BigInt64Array: true,
         BigUint64Array: true,
         RelativeIndexable: true,
         TypedArray: true,
+        WeakRef: true,
     },
 
     parser: "@typescript-eslint/parser",
