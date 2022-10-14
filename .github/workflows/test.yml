@@ -8,8 +8,11 @@ on:
         branches:
             - main
         paths:
-            - "src/**"
+            - "packages/**"
+            - "scripts/**"
+            - "types/**"
             - "jest.config.[jt]s"
+            - "rollup.config.js"
             - "tsconfig.json"
             - "package.json"
 jobs:
@@ -28,7 +31,9 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 16
-            - name: "[Install Dependencies]"
-              run: sudo npm install --unsafe-perm=true --allow-root --ignore-scripts
+            - name: "[Install Dependencies & Build]"
+              run: |
+                  sudo npm install pnpm@7.13.4 -g --unsafe-perm=true --allow-root --ignore-scripts
+                  sudo pnpm install --unsafe-perm=true --allow-root --ignore-scripts
             - name: "[Test]"
-              run: npm test
+              run: pnpm test

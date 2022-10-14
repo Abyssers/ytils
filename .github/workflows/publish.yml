@@ -7,8 +7,13 @@ on:
         branches:
             - main
         paths:
-            - "src/**"
+            - "packages/**"
+            - "scripts/**"
+            - "types/**"
             - "README.md"
+            - "jest.config.[jt]s"
+            - "rollup.config.js"
+            - "tsconfig.json"
             - "package.json"
 jobs:
     publish:
@@ -28,35 +33,34 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 16
-            - name: "[Install Dependencies]"
-              run: sudo npm install --unsafe-perm=true --allow-root --ignore-scripts
-            - name: "[Build]"
-              run: npm run build
+            - name: "[Install Dependencies & Build]"
+              run: |
+                  sudo npm install pnpm@7.13.4 -g --unsafe-perm=true --allow-root --ignore-scripts
+                  sudo pnpm install --unsafe-perm=true --allow-root --ignore-scripts
             - name: "[Publish 2 NPM]"
               id: final
-              uses: JS-DevTools/npm-publish@v1
+              env:
+                  NPM_TOKEN: ${{ secrets.MORILENCE_NPM_TOKEN }}
+              uses: changesets/action@v1
               with:
-                  token: ${{ secrets.MORILENCE_NPM_TOKEN }}
-                  access: public
-                  check-version: true
-                  tag: latest
-    notify:
-        needs: publish
-        if: ${{ needs.publish.outputs.type != 'none' }}
-        runs-on: ubuntu-latest
-        environment: ABYSSERS_NOTIFY_ENV
-        steps:
-            - name: "[Notify Abyssers/jit of spatula Updates]"
-              uses: peter-evans/repository-dispatch@v2
-              with:
-                  token: ${{ secrets.MORILENCE_GENERAL_PAT }}
-                  repository: Abyssers/jit
-                  event-type: spatula-updated
-                  client-payload: '{ "sha": "${{ github.sha }}", "ref": "${{ github.ref }}", "changes": "${{ github.event.changes }}", "version": "${{ needs.publish.outputs.version }}" }'
-            - name: "[Notify Abyssers/blog of spatula Updates]"
-              uses: peter-evans/repository-dispatch@v2
-              with:
-                  token: ${{ secrets.MORILENCE_GENERAL_PAT }}
-                  repository: Abyssers/blog
-                  event-type: spatula-updated
-                  client-payload: '{ "sha": "${{ github.sha }}", "ref": "${{ github.ref }}", "changes": "${{ github.event.changes }}", "version": "${{ needs.publish.outputs.version }}" }'
+                  publish: pnpm publish
+    # notify:
+    #     needs: publish
+    #     if: ${{ needs.publish.outputs.type != 'none' }}
+    #     runs-on: ubuntu-latest
+    #     environment: ABYSSERS_NOTIFY_ENV
+    #     steps:
+    #         - name: "[Notify Abyssers/jit of ytils Updates]"
+    #           uses: peter-evans/repository-dispatch@v2
+    #           with:
+    #               token: ${{ secrets.MORILENCE_GENERAL_PAT }}
+    #               repository: Abyssers/jit
+    #               event-type: ytils-updated
+    #               client-payload: '{ "sha": "${{ github.sha }}", "ref": "${{ github.ref }}", "changes": "${{ github.event.changes }}", "version": "${{ needs.publish.outputs.version }}" }'
+    #         - name: "[Notify Abyssers/blog of ytils Updates]"
+    #           uses: peter-evans/repository-dispatch@v2
+    #           with:
+    #               token: ${{ secrets.MORILENCE_GENERAL_PAT }}
+    #               repository: Abyssers/blog
+    #               event-type: ytils-updated
+    #               client-payload: '{ "sha": "${{ github.sha }}", "ref": "${{ github.ref }}", "changes": "${{ github.event.changes }}", "version": "${{ needs.publish.outputs.version }}" }'
