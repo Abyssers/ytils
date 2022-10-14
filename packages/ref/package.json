@@ -1,0 +1,37 @@
+{
+    "name": "@ytils/ref",
+    "version": "0.0.2",
+    "engines": {
+        "node": ">=16.11.0",
+        "npm": "please-use-pnpm",
+        "cnpm": "please-use-pnpm",
+        "yarn": "please-use-pnpm",
+        "pnpm": ">=7.12.2"
+    },
+    "type": "commonjs",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Abyssers/ytils.git"
+    },
+    "keywords": [
+        "typescript",
+        "utils"
+    ],
+    "author": "Morilence",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Abyssers/ytils/issues"
+    },
+    "files": [
+        "dist",
+        "LICENSE",
+        "package.json",
+        "README.md"
+    ],
+    "dependencies": {
+        "@ytils/typ": "workspace:*"
+    },
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "typings": "dist/index.d.ts"
+}
