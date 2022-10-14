@@ -1,9 +1,9 @@
 import { isNum, isBool, isStr, isDate, isRegExp, isArr, isSet, isMap, isWeakSet, isWeakMap, isErr } from "@ytils/typ";
 
 /**
- * Gets the refCloneOf of value
+ * Gets the cloneOf of value
  * @param value The value to be cloned
- * @returns The refCloneOf of value
+ * @returns The cloneOf of value
  * @example
  *
  * cloneOf(1)

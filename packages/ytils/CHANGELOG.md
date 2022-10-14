@@ -1,5 +1,12 @@
 # ytils
 
+## 0.0.3
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @ytils/recre8@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
