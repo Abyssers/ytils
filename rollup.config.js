@@ -1,5 +1,5 @@
 const { relative } = require("node:path");
-const { green, bgGreen, reset } = require("colors");
+const { green, bgGreen } = require("colors");
 const { defineConfig } = require("rollup");
 const json = require("@rollup/plugin-json");
 const strip = require("@rollup/plugin-strip");
@@ -10,8 +10,8 @@ const { getRootPath, getSubPkgs } = require("./scripts/lib");
 console.log(
     bgGreen(" PACKING ORDER "),
     getSubPkgs()
-        .map(({ dirName }) => green(dirName))
-        .join(reset(" --> "))
+        .map(({ dirName }) => green.bold(dirName))
+        .join(green(" --> "))
 );
 
 module.exports = defineConfig(
