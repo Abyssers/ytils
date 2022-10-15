@@ -1,5 +1,18 @@
 # ytils
 
+## 0.0.8
+
+### Patch Changes
+
+-   upgraded version with calibration of ci
+-   Updated dependencies
+    -   @ytils/calc@0.0.5
+    -   @ytils/cmpr@0.0.3
+    -   @ytils/mdfy@0.0.3
+    -   @ytils/recre8@0.0.5
+    -   @ytils/ref@0.0.3
+    -   @ytils/typ@0.0.3
+
 ## 0.0.7
 
 ### Patch Changes
