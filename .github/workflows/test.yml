@@ -34,6 +34,6 @@ jobs:
             - name: "[Install Dependencies & Build]"
               run: |
                   sudo npm install pnpm@7.13.4 -g --unsafe-perm=true --allow-root --ignore-scripts
-                  sudo pnpm install --unsafe-perm=true --allow-root --ignore-scripts
+                  pnpm install --ignore-scripts
             - name: "[Test]"
               run: pnpm test

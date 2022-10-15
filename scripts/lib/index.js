@@ -30,9 +30,19 @@ function getSubPkgs() {
             };
         })
         .filter(({ dirPath }) => statSync(dirPath).isDirectory())
-        .sort((a, b) => {
-            return Object.keys(a.pkgCfgs?.dependencies || {}).includes(b.pkgCfgs.name) ? 1 : -1;
-        });
+        .reduce((pkgs, curPkg) => {
+            /* topological sorting */
+            let i = pkgs.length - 1;
+            if (i < 0) return [curPkg];
+            for (; i >= 0; i--) {
+                if (Object.keys(curPkg.pkgCfgs.dependencies || {}).includes(pkgs[i].pkgCfgs.name)) {
+                    pkgs.splice(i + 1, 0, curPkg);
+                    return pkgs;
+                }
+            }
+            pkgs.unshift(curPkg);
+            return pkgs;
+        }, []);
 }
 
 function pnpm(args, options = { cwd: getRootPath() }) {

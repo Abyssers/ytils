@@ -20,7 +20,6 @@ importers:
             "@ytils/ref": workspace:*
             "@ytils/typ": workspace:*
             benchmark: ^2.1.4
-            chalk: ^5.1.0
             colors: ^1.4.0
             eslint: ^8.23.0
             eslint-config-prettier: ^8.5.0
@@ -57,7 +56,6 @@ importers:
             "@ytils/ref": link:packages/ref
             "@ytils/typ": link:packages/typ
             benchmark: registry.npmmirror.com/benchmark/2.1.4
-            chalk: registry.npmmirror.com/chalk/5.1.0
             colors: registry.npmmirror.com/colors/1.4.0
             eslint: registry.npmmirror.com/eslint/8.25.0
             eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier/8.5.0_eslint@8.25.0
@@ -3337,18 +3335,6 @@ packages:
         dependencies:
             ansi-styles: registry.npmmirror.com/ansi-styles/4.3.0
             supports-color: registry.npmmirror.com/supports-color/7.2.0
-        dev: true
-
-    registry.npmmirror.com/chalk/5.1.0:
-        resolution:
-            {
-                integrity: sha512-56zD4khRTBoIyzUYAFgDDaPhUMN/fC/rySe6aZGqbj/VWiU2eI3l6ZLOtYGFZAV5v02mwPjtpzlrOveJiz5eZQ==,
-                registry: https://registry.npm.taobao.org/,
-                tarball: https://registry.npmmirror.com/chalk/-/chalk-5.1.0.tgz,
-            }
-        name: chalk
-        version: 5.1.0
-        engines: { node: ^12.17.0 || ^14.13 || >=16.0.0 }
         dev: true
 
     registry.npmmirror.com/char-regex/1.0.2:

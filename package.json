@@ -60,7 +60,6 @@
         "@ytils/ref": "workspace:*",
         "@ytils/typ": "workspace:*",
         "benchmark": "^2.1.4",
-        "chalk": "^5.1.0",
         "colors": "^1.4.0",
         "eslint": "^8.23.0",
         "eslint-config-prettier": "^8.5.0",
