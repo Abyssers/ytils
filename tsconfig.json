@@ -13,7 +13,7 @@
         "noImplicitReturns": true,
         "preserveConstEnums": true,
         "experimentalDecorators": true,
-        "sourceMap": false
+        "sourceMap": true
     },
     "include": ["types/**/*.d.ts", "packages/**/*.ts"],
     "exclude": ["packages/**/*.test.ts"]
