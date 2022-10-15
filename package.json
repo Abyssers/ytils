@@ -1,7 +1,6 @@
 {
     "name": "ytils",
     "private": "true",
-    "version": "0.0.1",
     "description": "A collection of handy utilities for js/ts programing",
     "engines": {
         "node": ">=16.11.0",
