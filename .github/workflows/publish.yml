@@ -40,6 +40,7 @@ jobs:
             - name: "[Publish 2 NPM]"
               id: final
               env:
+                  GITHUB_TOKEN: ${{ secrets.MORILENCE_GENERAL_PAT }}
                   NPM_TOKEN: ${{ secrets.MORILENCE_NPM_TOKEN }}
               uses: changesets/action@v1
               with:
