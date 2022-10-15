@@ -1,6 +1,6 @@
 {
     "name": "ytils",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "dependencies": {
         "@ytils/calc": "workspace:*",
         "@ytils/typ": "workspace:*",
