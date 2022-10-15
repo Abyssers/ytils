@@ -18,9 +18,11 @@ describe("isObj", () => {
                 /* do something */
             })
         ).toBeTruthy();
-        expect(() => {
-            /* do something */
-        }).toBeTruthy();
+        expect(
+            isObj(() => {
+                /* do something */
+            })
+        ).toBeTruthy();
         expect(
             isObj(async function () {
                 /* do something */
