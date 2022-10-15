@@ -1,9 +1,9 @@
 import { isNum, isBool, isStr, isDate, isRegExp, isArr, isSet, isMap, isWeakSet, isWeakMap, isErr } from "@ytils/typ";
 
 /**
- * Gets the cloneOf of value
+ * Gets the clone of value
  * @param value The value to be cloned
- * @returns The cloneOf of value
+ * @returns The clone of value
  * @example
  *
  * cloneOf(1)
@@ -53,7 +53,7 @@ function cloneWithMap<T>(value: T, map: WeakMap<object, T>): T {
     ) {
         cloned = new (value.constructor as ObjectConstructor)(value);
     } else if (isRegExp(value)) {
-        cloned = new (value.constructor as RegExpConstructor)(value);
+        cloned = new RegExp(value);
         cloned.lastIndex = value.lastIndex;
     } else if (isArr(value)) {
         cloned = new Array(value.length);
