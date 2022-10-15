@@ -33,10 +33,12 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 16
-            - name: "[Install Dependencies & Build]"
+            - name: "[Install Dependencies]"
               run: |
                   sudo npm install pnpm@7.13.4 -g --unsafe-perm=true --allow-root --ignore-scripts
-                  pnpm install --ignore-scripts
+                  sudo pnpm install --ignore-scripts
+            - name: "[Build]"
+              run: pnpm build
             - name: "[Publish 2 NPM]"
               id: final
               env:
