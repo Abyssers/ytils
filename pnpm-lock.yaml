@@ -76,7 +76,10 @@ importers:
             typescript: registry.npmmirror.com/typescript/4.8.4
 
     packages/calc:
-        specifiers: {}
+        specifiers:
+            "@ytils/typ": workspace:*
+        dependencies:
+            "@ytils/typ": link:../typ
 
     packages/cmpr:
         specifiers:
