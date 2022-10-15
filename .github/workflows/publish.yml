@@ -44,7 +44,7 @@ jobs:
                   NPM_TOKEN: ${{ secrets.MORILENCE_NPM_TOKEN }}
               uses: changesets/action@v1
               with:
-                  publish: pnpm publish
+                  publish: pnpm changeset publish
     # notify:
     #     needs: publish
     #     if: ${{ needs.publish.outputs.type != 'none' }}
