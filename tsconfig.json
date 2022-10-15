@@ -15,6 +15,6 @@
         "experimentalDecorators": true,
         "sourceMap": false
     },
-    "include": ["types/**/*.d.ts", "src/**/*.ts"],
-    "exclude": ["src/**/*.test.ts"]
+    "include": ["types/**/*.d.ts", "packages/**/*.ts"],
+    "exclude": ["packages/**/*.test.ts"]
 }

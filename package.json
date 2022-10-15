@@ -1,52 +1,66 @@
 {
-    "name": "@abysser/spatula",
-    "version": "1.0.29",
-    "description": "A handy utensil for javascript cooking",
-    "main": "dist/index.js",
-    "module": "dist/index.esm.js",
-    "type": "commonjs",
+    "name": "ytils",
+    "private": "true",
+    "version": "0.0.1",
+    "description": "A collection of handy utilities for js/ts programing",
     "engines": {
-        "node": ">=10.24.1"
+        "node": ">=16.11.0",
+        "npm": "please-use-pnpm",
+        "cnpm": "please-use-pnpm",
+        "yarn": "please-use-pnpm",
+        "pnpm": ">=7.12.2"
     },
-    "files": [
-        "dist",
-        "LICENSE",
-        "package.json",
-        "README.md"
+    "workspaces": [
+        "packages/*"
     ],
-    "scripts": {
-        "prepare": "husky install",
-        "dev": "rollup -c -w",
-        "lint": "eslint --fix --ext .js,.ts && prettier --write .",
-        "build": "rollup -c",
-        "test": "jest"
-    },
+    "type": "commonjs",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Abyssers/spatula.git"
+        "url": "git+https://github.com/Abyssers/ytils.git"
     },
     "keywords": [
         "typescript",
         "utils"
     ],
     "author": "Morilence",
+    "contributors": [
+        "Morilence",
+        "tnmwl"
+    ],
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Abyssers/spatula/issues"
+        "url": "https://github.com/Abyssers/ytils/issues"
     },
-    "homepage": "https://github.com/Abyssers/spatula#readme",
+    "homepage": "https://github.com/Abyssers/ytils#readme",
+    "scripts": {
+        "prepare": "husky install",
+        "postinstall": "pnpm run build",
+        "setup": "node scripts/setup",
+        "dev": "rollup -c -w",
+        "build": "rollup -c",
+        "clean": "node scripts/clean",
+        "lint": "eslint --fix --ext .js,.ts && prettier --write .",
+        "test": "jest"
+    },
     "devDependencies": {
+        "@changesets/cli": "^2.25.0",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "@rollup/plugin-json": "^4.1.0",
         "@rollup/plugin-strip": "^2.1.0",
-        "@rollup/plugin-typescript": "^8.4.0",
         "@types/benchmark": "^2.1.2",
         "@types/jest": "^29.0.3",
         "@types/node": "^18.7.14",
         "@typescript-eslint/eslint-plugin": "^5.35.1",
         "@typescript-eslint/parser": "^5.35.1",
+        "@ytils/calc": "workspace:*",
+        "@ytils/cmpr": "workspace:*",
+        "@ytils/mdfy": "workspace:*",
+        "@ytils/recre8": "workspace:*",
+        "@ytils/ref": "workspace:*",
+        "@ytils/typ": "workspace:*",
         "benchmark": "^2.1.4",
+        "chalk": "^5.1.0",
         "colors": "^1.4.0",
         "eslint": "^8.23.0",
         "eslint-config-prettier": "^8.5.0",
@@ -60,6 +74,7 @@
         "prettier": "^2.7.1",
         "rollup": "^2.79.0",
         "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-typescript2": "^0.34.1",
         "ts-jest": "^29.0.2",
         "ts-node": "^10.9.1",
         "tslib": "^2.4.0",
