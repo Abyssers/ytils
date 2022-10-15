@@ -1,6 +1,6 @@
 {
     "name": "@ytils/calc",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "engines": {
         "node": ">=16.11.0",
         "npm": "please-use-pnpm",
@@ -28,6 +28,9 @@
         "package.json",
         "README.md"
     ],
+    "dependencies": {
+        "@ytils/typ": "workspace:*"
+    },
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "typings": "dist/index.d.ts"
