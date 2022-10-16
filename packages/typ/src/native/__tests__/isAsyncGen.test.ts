@@ -1,40 +1,52 @@
 import { isAsyncGen } from "../isAsyncGen";
 
 describe("isAsyncGen", () => {
-    test("generate function", () => {
+    test("asynchronous generator", () => {
         expect(
-            isAsyncGen(function* () {
-                /* do something */
-            })
-        ).toBeTruthy();
-        expect(
-            isAsyncGen(async function* () {
-                /* do something */
-            })
+            isAsyncGen(
+                (async function* () {
+                    /* do something */
+                })()
+            )
         ).toBeTruthy();
     });
 
-    test("ungenerate function", () => {
+    test("synchronous generator", () => {
         expect(isAsyncGen(console.log)).toBeFalsy();
         expect(
-            isAsyncGen(function () {
-                /* do something */
-            })
+            isAsyncGen(
+                (function () {
+                    /* do something */
+                })()
+            )
         ).toBeFalsy();
         expect(
-            isAsyncGen(() => {
-                /* do something */
-            })
+            isAsyncGen(
+                (() => {
+                    /* do something */
+                })()
+            )
         ).toBeFalsy();
         expect(
-            isAsyncGen(async function () {
-                /* do something */
-            })
+            isAsyncGen(
+                (function* () {
+                    /* do something */
+                })()
+            )
         ).toBeFalsy();
         expect(
-            isAsyncGen(async () => {
-                /* do something */
-            })
+            isAsyncGen(
+                (async function () {
+                    /* do something */
+                })()
+            )
+        ).toBeFalsy();
+        expect(
+            isAsyncGen(
+                (async () => {
+                    /* do something */
+                })()
+            )
         ).toBeFalsy();
     });
 
