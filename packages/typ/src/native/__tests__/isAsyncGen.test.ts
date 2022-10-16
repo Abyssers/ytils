@@ -12,38 +12,9 @@ describe("isAsyncGen", () => {
     });
 
     test("synchronous generator", () => {
-        expect(isAsyncGen(console.log)).toBeFalsy();
-        expect(
-            isAsyncGen(
-                (function () {
-                    /* do something */
-                })()
-            )
-        ).toBeFalsy();
-        expect(
-            isAsyncGen(
-                (() => {
-                    /* do something */
-                })()
-            )
-        ).toBeFalsy();
         expect(
             isAsyncGen(
                 (function* () {
-                    /* do something */
-                })()
-            )
-        ).toBeFalsy();
-        expect(
-            isAsyncGen(
-                (async function () {
-                    /* do something */
-                })()
-            )
-        ).toBeFalsy();
-        expect(
-            isAsyncGen(
-                (async () => {
                     /* do something */
                 })()
             )
@@ -67,5 +38,35 @@ describe("isAsyncGen", () => {
         expect(isAsyncGen(new WeakMap())).toBeFalsy();
         expect(isAsyncGen(new Set())).toBeFalsy();
         expect(isAsyncGen(new WeakSet())).toBeFalsy();
+
+        expect(isAsyncGen(console.log)).toBeFalsy();
+        expect(
+            isAsyncGen(
+                (function () {
+                    /* do something */
+                })()
+            )
+        ).toBeFalsy();
+        expect(
+            isAsyncGen(
+                (() => {
+                    /* do something */
+                })()
+            )
+        ).toBeFalsy();
+        expect(
+            isAsyncGen(
+                (async function () {
+                    /* do something */
+                })()
+            )
+        ).toBeFalsy();
+        expect(
+            isAsyncGen(
+                (async () => {
+                    /* do something */
+                })()
+            )
+        ).toBeFalsy();
     });
 });

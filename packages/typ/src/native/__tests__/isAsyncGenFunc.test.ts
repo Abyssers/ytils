@@ -1,15 +1,13 @@
 import { isAsyncGenFunc } from "../isAsyncGenFunc";
 
 describe("isAsyncGenFunc", () => {
-    test("asynchronous-generate function", () => {
+    test("function", () => {
         expect(
             isAsyncGenFunc(async function* () {
                 /* do something */
             })
         ).toBeTruthy();
-    });
 
-    test("other function", () => {
         expect(isAsyncGenFunc(console.log)).toBeFalsy();
         expect(
             isAsyncGenFunc(function () {
