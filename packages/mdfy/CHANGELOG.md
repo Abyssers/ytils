@@ -1,5 +1,11 @@
 # @ytils/mdfy
 
+## 0.0.4
+
+### Patch Changes
+
+-   feat: added eliminate, extend, merge and override methods
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # ytils
 
+## 0.0.10
+
+### Patch Changes
+
+-   Updated dependencies
+-   Updated dependencies
+    -   @ytils/mdfy@0.0.4
+    -   @ytils/recre8@0.0.7
+
 ## 0.0.9
 
 ### Patch Changes
