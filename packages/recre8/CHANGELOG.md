@@ -1,5 +1,11 @@
 # @ytils/recre8
 
+## 0.0.6
+
+### Patch Changes
+
+-   refactor: renamed all methods
+
 ## 0.0.5
 
 ### Patch Changes

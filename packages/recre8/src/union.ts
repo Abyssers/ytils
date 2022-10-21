@@ -7,16 +7,16 @@ import { isEq } from "@ytils/cmpr";
  * @returns {T[]} Returns the union of values
  * @example
  *
- * unionOf([1, 2, 3], [2, 3, 4])
+ * union([1, 2, 3], [2, 3, 4])
  * // => [1, 2, 3, 4]
  *
- * unionOf([{ name: "Morilence" }, { name: "GarlicGo" }], [{ name: "Morilence" }])
+ * union([{ name: "Morilence" }, { name: "GarlicGo" }], [{ name: "Morilence" }])
  * // => [{ name: "Morilence" }, { name: "GarlicGo" }]
  *
- * unionOf([1, 2], 2, [2, 3])
- * // => unionOf([1, 2], [2], [2, 3]) => [1, 2, 3]
+ * union([1, 2], 2, [2, 3])
+ * // => union([1, 2], [2], [2, 3]) => [1, 2, 3]
  */
-export function unionOf<T>(...values: (T | T[])[]): T[] {
+export function union<T>(...values: (T | T[])[]): T[] {
     const sylloge: T[] = [];
     for (let i = values.length - 1; i >= 0; i--) {
         sylloge.push(...(isArr(values[i]) ? (values[i] as T[]) : [values[i] as T]));

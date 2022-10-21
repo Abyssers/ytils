@@ -6,19 +6,19 @@ import { isNum, isBool, isStr, isDate, isRegExp, isArr, isSet, isMap, isWeakSet,
  * @returns The clone of value
  * @example
  *
- * cloneOf(1)
+ * clone(1)
  * // => 1
  *
- * cloneOf(new String("1"))
+ * clone(new String("1"))
  * // => new String("1")
  *
- * cloneOf([6])
+ * clone([6])
  * // => [6]
  *
- * cloneOf({ age: 6 })
+ * clone({ age: 6 })
  * // => { age: 6 }
  */
-export function cloneOf<T>(value: T): T {
+export function clone<T>(value: T): T {
     const map = new WeakMap<object, T>();
     return cloneWithMap(value, map);
 }
