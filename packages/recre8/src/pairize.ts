@@ -6,23 +6,23 @@ import { isArr, isSet, isMap } from "@ytils/typ";
  * @returns {[T, T][] | [T, U][] | [T, T[]] | [string, T[keyof T]][]} Returns pairs transformed from value
  * @example
  *
- * pairsFrom([1, 2, 3])
+ * pairize([1, 2, 3])
  * // => [1, [2, 3]]
  *
- * pairsFrom(new Set([1, 2, 3]))
+ * pairize(new Set([1, 2, 3]))
  * // => [[1, 1], [2, 2], [3, 3]]
  *
- * pairsFrom(new Map([["a", 1], ["b", 2], ["c", 3]]))
+ * pairize(new Map([["a", 1], ["b", 2], ["c", 3]]))
  * // => [["a", 1], ["b", 2], ["c", 3]]
  *
- * pairsFrom({ a: 1, b: 2, c: 3 })
+ * pairize({ a: 1, b: 2, c: 3 })
  * // => [["a", 1], ["b", 2], ["c", 3]]
  */
-export function pairsFrom<T>(value: Array<T>): [T, T[]];
-export function pairsFrom<T>(value: Set<T>): [T, T][];
-export function pairsFrom<T, U>(value: Map<T, U>): [T, U][];
-export function pairsFrom<T extends object>(value: T): [string, T[keyof T]][];
-export function pairsFrom<T, U>(
+export function pairize<T>(value: Array<T>): [T, T[]];
+export function pairize<T>(value: Set<T>): [T, T][];
+export function pairize<T, U>(value: Map<T, U>): [T, U][];
+export function pairize<T extends object>(value: T): [string, T[keyof T]][];
+export function pairize<T, U>(
     value: Array<T> | Set<T> | Map<T, U> | T
 ): [T, T][] | [T, U][] | [T, T[]] | [string, T[keyof T]][] {
     if (value == null || typeof value !== "object") return [];

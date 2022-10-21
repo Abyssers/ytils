@@ -7,16 +7,16 @@ import { isEq } from "@ytils/cmpr";
  * @returns {T[]} Returns the intersection of values
  * @example
  *
- * intxnOf([1, 2, 3], [2, 3, 4])
+ * intxn([1, 2, 3], [2, 3, 4])
  * // => [2, 3]
  *
- * intxnOf([{ name: "Morilence" }, { name: "GarlicGo" }], [{ name: "Morilence" }])
+ * intxn([{ name: "Morilence" }, { name: "GarlicGo" }], [{ name: "Morilence" }])
  * // => [{ name: "Morilence" }]
  *
- * intxnOf([1, 2], 2, [2, 3])
- * // => intxnOf([1, 2], [2], [2, 3]) => [2]
+ * intxn([1, 2], 2, [2, 3])
+ * // => intxn([1, 2], [2], [2, 3]) => [2]
  */
-export function intxnOf<T>(...values: (T | T[])[]): T[] {
+export function intxn<T>(...values: (T | T[])[]): T[] {
     return values.reduce(
         (intxn: T[], value: T | T[]) =>
             intxn.filter(itemL => (isArr(value) ? (value as T[]) : [value as T]).some(itemR => isEq(itemL, itemR))),
