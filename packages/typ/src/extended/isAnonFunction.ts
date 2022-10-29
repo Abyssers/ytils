@@ -28,10 +28,8 @@ import { isFunction } from "../native/isFunction";
  * isAnonFunction(function hello() {})
  * // => false
  */
-export function isAnonFunction<T extends Function>(value: T): value is T;
-export function isAnonFunction(value: GeneratorFunction): value is GeneratorFunction;
-export function isAnonFunction(value: AsyncGeneratorFunction): value is AsyncGeneratorFunction;
-export function isAnonFunction(value: any): boolean;
+export function isAnonFunction<P extends any[], R>(value: (...args: P) => R): value is (...args: P) => R;
+export function isAnonFunction(value: any): value is (...args: any[]) => any;
 export function isAnonFunction(value: any): boolean {
     return isFunction(value) && value.name === "";
 }
