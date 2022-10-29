@@ -13,7 +13,7 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
  * // => true
  */
 export function isSet<T>(value: Set<T>): value is Set<T>;
-export function isSet(value: any): boolean;
+export function isSet(value: any): value is Set<any>;
 export function isSet(value: any): boolean {
     return typeTagOf(value) === TypeTag.Set;
 }

@@ -13,7 +13,7 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
  * // => true
  */
 export function isMap<K, V>(value: Map<K, V>): value is Map<K, V>;
-export function isMap(value: any): boolean;
+export function isMap(value: any): value is Map<any, any>;
 export function isMap(value: any): boolean {
     return typeTagOf(value) === TypeTag.Map;
 }

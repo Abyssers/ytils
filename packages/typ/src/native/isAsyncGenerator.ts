@@ -24,7 +24,7 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
 export function isAsyncGenerator<T, TReturn, TNext>(
     value: AsyncGenerator<T, TReturn, TNext>
 ): value is AsyncGenerator<T, TReturn, TNext>;
-export function isAsyncGenerator(value: any): boolean;
+export function isAsyncGenerator(value: any): value is AsyncGenerator<any, any, any>;
 export function isAsyncGenerator(value: any): boolean {
     return typeTagOf(value) === TypeTag.AsyncGenerator;
 }

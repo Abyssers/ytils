@@ -3,19 +3,19 @@ import { green } from "colors";
 import { typeTagOf, TypeTag } from "../src/.internal/tag";
 
 function isTypedArray_ByEnumeration(value: any): boolean {
-    const tag = typeTagOf(value);
+    const typeTag = typeTagOf(value);
     return (
-        tag === TypeTag.BigInt64Array ||
-        tag === TypeTag.BigUint64Array ||
-        tag === TypeTag.Float32Array ||
-        tag === TypeTag.Float64Array ||
-        tag === TypeTag.Int16Array ||
-        tag === TypeTag.Int32Array ||
-        tag === TypeTag.Int8Array ||
-        tag === TypeTag.Uint16Array ||
-        tag === TypeTag.Uint32Array ||
-        tag === TypeTag.Uint8Array ||
-        tag === TypeTag.Uint8ClampedArray
+        typeTag === TypeTag.BigInt64Array ||
+        typeTag === TypeTag.BigUint64Array ||
+        typeTag === TypeTag.Float32Array ||
+        typeTag === TypeTag.Float64Array ||
+        typeTag === TypeTag.Int16Array ||
+        typeTag === TypeTag.Int32Array ||
+        typeTag === TypeTag.Int8Array ||
+        typeTag === TypeTag.Uint16Array ||
+        typeTag === TypeTag.Uint32Array ||
+        typeTag === TypeTag.Uint8Array ||
+        typeTag === TypeTag.Uint8ClampedArray
     );
 }
 

@@ -14,17 +14,17 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
  * // => true
  *
  * isAsyncFunction(async function* () {})
- * // => true
+ * // => false
  *
  * isAsyncFunction(() => {})
  * // => false
  */
-export function isAsyncFunction<T extends Function>(value: T): value is T;
-export function isAsyncFunction(value: AsyncGeneratorFunction): value is AsyncGeneratorFunction;
-export function isAsyncFunction(value: any): boolean;
+export function isAsyncFunction<P extends any[], R extends Promise<any>>(
+    value: (...args: P) => R
+): value is (...args: P) => R;
+export function isAsyncFunction(value: any): value is (...args: any[]) => Promise<any>;
 export function isAsyncFunction(value: any): boolean {
-    const typeTag = typeTagOf(value);
-    return typeTag === TypeTag.AsyncFunction || typeTag === TypeTag.AsyncGeneratorFunction;
+    return typeTagOf(value) === TypeTag.AsyncFunction;
 }
 
 export const isAsyncFunc = isAsyncFunction;

@@ -25,10 +25,8 @@ import { isNaN } from "./isNaN";
  * isFunction(async function* () {})
  * // => true
  */
-export function isFunction<T extends Function>(value: T): value is T;
-export function isFunction(value: GeneratorFunction): value is GeneratorFunction;
-export function isFunction(value: AsyncGeneratorFunction): value is AsyncGeneratorFunction;
-export function isFunction(value: any): boolean;
+export function isFunction<P extends any[], R>(value: (...args: P) => R): value is (...args: P) => R;
+export function isFunction(value: any): value is (...args: any[]) => any;
 export function isFunction(value: any): boolean {
     return typeof value === "function" && isNaN(value.nodeType);
 }

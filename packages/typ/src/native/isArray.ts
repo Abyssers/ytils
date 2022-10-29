@@ -20,7 +20,7 @@
  * // => false
  */
 export function isArray<T>(value: T[]): value is T[];
-export function isArray(value: any): boolean;
+export function isArray(value: any): value is any[];
 export function isArray(value: any): boolean {
     return Array.isArray(value);
 }

@@ -21,9 +21,15 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
  * isGeneratorFunction("6")
  * // => false
  */
-export function isGeneratorFunction(value: GeneratorFunction): value is GeneratorFunction;
-export function isGeneratorFunction(value: AsyncGeneratorFunction): value is AsyncGeneratorFunction;
-export function isGeneratorFunction(value: any): boolean;
+export function isGeneratorFunction<P extends any[], R extends Generator<any, any, any>>(
+    value: (...args: P) => R
+): value is (...args: P) => R;
+export function isGeneratorFunction<P extends any[], R extends AsyncGenerator<any, any, any>>(
+    value: (...args: P) => R
+): value is (...args: P) => R;
+export function isGeneratorFunction(
+    value: any
+): value is (...arg: any[]) => Generator<any, any, any> | ((...arg: any[]) => AsyncGenerator<any, any, any>);
 export function isGeneratorFunction(value: any): boolean {
     const typeTag = typeTagOf(value);
     return typeTag === TypeTag.GeneratorFunction || typeTag === TypeTag.AsyncGeneratorFunction;

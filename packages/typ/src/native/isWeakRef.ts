@@ -25,7 +25,7 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
  * // => false
  */
 export function isWeakRef<T extends object>(value: WeakRef<T>): value is WeakRef<T>;
-export function isWeakRef(value: any): boolean;
+export function isWeakRef(value: any): value is WeakRef<any>;
 export function isWeakRef(value: any): boolean {
     return typeTagOf(value) === TypeTag.WeakRef;
 }

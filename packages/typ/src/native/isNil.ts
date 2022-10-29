@@ -15,7 +15,7 @@
  */
 export function isNil(value: undefined): value is undefined;
 export function isNil(value: null): value is null;
-export function isNil(value: any): boolean;
+export function isNil(value: any): value is undefined | null;
 export function isNil(value: any): boolean {
     return value === undefined || value === null;
 }

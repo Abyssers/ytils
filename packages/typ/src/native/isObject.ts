@@ -21,8 +21,8 @@
  * // => true
  */
 export function isObject<T extends object>(value: T): value is T;
-export function isObject<T extends Function>(value: T): value is T;
-export function isObject(value: any): boolean;
+export function isObject<P extends any[], R>(value: (...args: P) => R): value is (...args: P) => R;
+export function isObject(value: any): value is object | ((...args: any) => any);
 export function isObject(value: any): boolean {
     return value != null && (typeof value === "object" || typeof value === "function");
 }

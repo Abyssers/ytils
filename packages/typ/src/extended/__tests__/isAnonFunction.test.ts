@@ -12,11 +12,6 @@ describe("isAnonFunction", () => {
                 /* do something */
             })
         ).toBeTruthy();
-        expect(
-            isAnonFunction(function* () {
-                /* do something */
-            })
-        ).toBeTruthy();
 
         expect(isAnonFunction(console.log)).toBeFalsy();
         expect(isAnonFunction(Math.random)).toBeFalsy();
@@ -31,6 +26,14 @@ describe("isAnonFunction", () => {
         ).toBeTruthy();
         expect(
             isAnonFunction(async () => {
+                /* do something */
+            })
+        ).toBeTruthy();
+    });
+
+    test("generator function", () => {
+        expect(
+            isAnonFunction(function* () {
                 /* do something */
             })
         ).toBeTruthy();

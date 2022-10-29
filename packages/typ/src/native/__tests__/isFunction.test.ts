@@ -13,11 +13,6 @@ describe("isFunction", () => {
                 /* do something */
             })
         ).toBeTruthy();
-        expect(
-            isFunction(function* () {
-                /* do something */
-            })
-        ).toBeTruthy();
     });
 
     test("asynchronous function", () => {
@@ -28,6 +23,14 @@ describe("isFunction", () => {
         ).toBeTruthy();
         expect(
             isFunction(async () => {
+                /* do something */
+            })
+        ).toBeTruthy();
+    });
+
+    test("generator function", () => {
+        expect(
+            isFunction(function* () {
                 /* do something */
             })
         ).toBeTruthy();

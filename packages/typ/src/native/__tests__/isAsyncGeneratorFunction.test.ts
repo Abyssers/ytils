@@ -1,13 +1,20 @@
 import { isAsyncGeneratorFunction } from "../isAsyncGeneratorFunction";
 
 describe("isAsyncGeneratorFunction", () => {
-    test("function", () => {
+    test("generator function", () => {
         expect(
             isAsyncGeneratorFunction(async function* () {
                 /* do something */
             })
         ).toBeTruthy();
+        expect(
+            isAsyncGeneratorFunction(function* () {
+                /* do something */
+            })
+        ).toBeFalsy();
+    });
 
+    test("synchronous function", () => {
         expect(isAsyncGeneratorFunction(console.log)).toBeFalsy();
         expect(
             isAsyncGeneratorFunction(function () {
@@ -19,11 +26,9 @@ describe("isAsyncGeneratorFunction", () => {
                 /* do something */
             })
         ).toBeFalsy();
-        expect(
-            isAsyncGeneratorFunction(function* () {
-                /* do something */
-            })
-        ).toBeFalsy();
+    });
+
+    test("asynchronous function", () => {
         expect(
             isAsyncGeneratorFunction(async function () {
                 /* do something */

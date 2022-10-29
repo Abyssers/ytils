@@ -28,7 +28,7 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
  * // => false
  */
 export function isPlainObject<T extends object>(value: T): T;
-export function isPlainObject(value: any): boolean;
+export function isPlainObject(value: any): value is object;
 export function isPlainObject(value: any): boolean {
     return (
         typeTagOf(value) === TypeTag.Object && (value.constructor === Object || Object.getPrototypeOf(value) === null)

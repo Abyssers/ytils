@@ -13,7 +13,12 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
  * // => true
  */
 export function isWeakMap<K extends object, V>(value: WeakMap<K, V>): value is WeakMap<K, V>;
-export function isWeakMap(value: any): boolean;
+export function isWeakMap(value: any): value is WeakMap<any, any>;
 export function isWeakMap(value: any): boolean {
     return typeTagOf(value) === TypeTag.WeakMap;
+}
+
+const a: any = "1";
+if (isWeakMap(a)) {
+    console.log(a);
 }

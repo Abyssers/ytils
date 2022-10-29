@@ -21,7 +21,11 @@ import { typeTagOf, TypeTag } from "../.internal/tag";
  * isAsyncGeneratorFunction("6")
  * // => false
  */
-export function isAsyncGeneratorFunction(value: any): value is AsyncGeneratorFunction {
+export function isAsyncGeneratorFunction<P extends any[], R extends AsyncGenerator<any, any, any>>(
+    value: (...args: P) => R
+): value is (...args: P) => R;
+export function isAsyncGeneratorFunction(value: any): value is (...arg: any[]) => AsyncGenerator<any, any, any>;
+export function isAsyncGeneratorFunction(value: any): boolean {
     return typeTagOf(value) === TypeTag.AsyncGeneratorFunction;
 }
 
