@@ -1,4 +1,7 @@
-export enum Tag {
+/**
+ * Built-in types
+ */
+export enum TypeTag {
     Arguments = "[object Arguments]",
     Array = "[object Array]",
     ArrayBuffer = "[object ArrayBuffer]",
@@ -51,21 +54,21 @@ export enum Tag {
 /**
  * Gets the type-tag of value using Object.prototype.toString
  * @param value The value to get from
- * @returns {Tag} The type-tag of value
+ * @returns {TypeTag} The type-tag of value
  * @example
  *
- * tagOf(6)
+ * typeTagOf(6)
  * // => "[object Number]"
  *
- * tagOf(new Number(6))
+ * typeTagOf(new Number(6))
  * // => "[object Number]"
  *
- * tagOf("6")
+ * typeTagOf("6")
  * // => "[object String]"
  *
- * tagOf(new String(6))
+ * typeTagOf(new String(6))
  * // => "[object String]"
  */
-export function tagOf(value: any): Tag {
+export function typeTagOf(value: any): TypeTag {
     return Object.prototype.toString.call(value);
 }

@@ -1,5 +1,5 @@
-import { tagOf, Tag } from "../.internal/tag";
-import { isNum } from "./isNum";
+import { typeTagOf, TypeTag } from "../.internal/tag";
+import { isNumber } from "./isNumber";
 
 /**
  * Checks whether value is a valid Date object.
@@ -26,5 +26,5 @@ import { isNum } from "./isNum";
  * // => false
  */
 export function isDate(value: any): value is Date {
-    return tagOf(value) === Tag.Date && isNum(value.getTime());
+    return typeTagOf(value) === TypeTag.Date && isNumber(value.getTime());
 }

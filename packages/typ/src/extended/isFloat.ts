@@ -1,4 +1,4 @@
-import { tagOf, Tag } from "../.internal/tag";
+import { typeTagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is a float or a floating-point Number object.
@@ -28,5 +28,10 @@ import { tagOf, Tag } from "../.internal/tag";
  * // => false
  */
 export function isFloat(value: any): value is number {
-    return tagOf(value) === Tag.Number && !Number.isNaN(+value) && !Number.isInteger(+value) && Number.isFinite(+value);
+    return (
+        typeTagOf(value) === TypeTag.Number &&
+        !Number.isNaN(+value) &&
+        !Number.isInteger(+value) &&
+        Number.isFinite(+value)
+    );
 }

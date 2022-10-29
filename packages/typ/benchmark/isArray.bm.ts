@@ -1,6 +1,6 @@
 import Benchmark from "benchmark";
 import { green } from "colors";
-import { tagOf, Tag } from "../src/.internal/tag";
+import { typeTagOf, TypeTag } from "../src/.internal/tag";
 
 function isArray_ByConstructor(value: any): boolean {
     if (value == null) return false;
@@ -13,7 +13,7 @@ function isArray_ByProto(value: any): boolean {
 }
 
 function isArray_ByTag(value: any): boolean {
-    return tagOf(value) === Tag.Array;
+    return typeTagOf(value) === TypeTag.Array;
 }
 
 function isArray_ByNative(value: any): boolean {

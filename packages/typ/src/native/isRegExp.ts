@@ -1,4 +1,4 @@
-import { tagOf, Tag } from "../.internal/tag";
+import { typeTagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is a RegExp object.
@@ -25,5 +25,5 @@ import { tagOf, Tag } from "../.internal/tag";
  * // => false
  */
 export function isRegExp(value: any): value is RegExp {
-    return tagOf(value) === Tag.RegExp;
+    return typeTagOf(value) === TypeTag.RegExp;
 }

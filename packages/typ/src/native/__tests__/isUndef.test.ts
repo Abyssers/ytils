@@ -1,35 +1,35 @@
-import { isUndef } from "../isUndef";
+import { isUndefined } from "../isUndefined";
 
-describe("isUndef", () => {
+describe("isUndefined", () => {
     test("undefined", () => {
-        expect(isUndef(undefined)).toBeTruthy();
+        expect(isUndefined(undefined)).toBeTruthy();
     });
 
     test("other types", () => {
-        expect(isUndef(null)).toBeFalsy();
-        expect(isUndef(new Number(6))).toBeFalsy();
-        expect(isUndef(new Number(Infinity))).toBeFalsy();
-        expect(isUndef(new Number(NaN))).toBeFalsy();
-        expect(isUndef(6)).toBeFalsy();
-        expect(isUndef(Number.MIN_SAFE_INTEGER)).toBeFalsy();
-        expect(isUndef(Number.MAX_SAFE_INTEGER)).toBeFalsy();
-        expect(isUndef(Infinity)).toBeFalsy();
-        expect(isUndef(NaN)).toBeFalsy();
-        expect(isUndef(true)).toBeFalsy();
-        expect(isUndef(new Boolean(false))).toBeFalsy();
-        expect(isUndef("6")).toBeFalsy();
-        expect(isUndef(new String(6))).toBeFalsy();
-        expect(isUndef(Symbol(6))).toBeFalsy();
-        expect(isUndef({})).toBeFalsy();
-        expect(isUndef(new Object())).toBeFalsy();
-        expect(isUndef([])).toBeFalsy();
-        expect(isUndef(new Array(6))).toBeFalsy();
-        expect(isUndef(console.log)).toBeFalsy();
-        expect(isUndef(new Date())).toBeFalsy();
-        expect(isUndef(new RegExp("6"))).toBeFalsy();
-        expect(isUndef(new Map())).toBeFalsy();
-        expect(isUndef(new WeakMap())).toBeFalsy();
-        expect(isUndef(new Set())).toBeFalsy();
-        expect(isUndef(new WeakSet())).toBeFalsy();
+        expect(isUndefined(null)).toBeFalsy();
+        expect(isUndefined(new Number(6))).toBeFalsy();
+        expect(isUndefined(new Number(Infinity))).toBeFalsy();
+        expect(isUndefined(new Number(NaN))).toBeFalsy();
+        expect(isUndefined(6)).toBeFalsy();
+        expect(isUndefined(Number.MIN_SAFE_INTEGER)).toBeFalsy();
+        expect(isUndefined(Number.MAX_SAFE_INTEGER)).toBeFalsy();
+        expect(isUndefined(Infinity)).toBeFalsy();
+        expect(isUndefined(NaN)).toBeFalsy();
+        expect(isUndefined(true)).toBeFalsy();
+        expect(isUndefined(new Boolean(false))).toBeFalsy();
+        expect(isUndefined("6")).toBeFalsy();
+        expect(isUndefined(new String(6))).toBeFalsy();
+        expect(isUndefined(Symbol(6))).toBeFalsy();
+        expect(isUndefined({})).toBeFalsy();
+        expect(isUndefined(new Object())).toBeFalsy();
+        expect(isUndefined([])).toBeFalsy();
+        expect(isUndefined(new Array(6))).toBeFalsy();
+        expect(isUndefined(console.log)).toBeFalsy();
+        expect(isUndefined(new Date())).toBeFalsy();
+        expect(isUndefined(new RegExp("6"))).toBeFalsy();
+        expect(isUndefined(new Map())).toBeFalsy();
+        expect(isUndefined(new WeakMap())).toBeFalsy();
+        expect(isUndefined(new Set())).toBeFalsy();
+        expect(isUndefined(new WeakSet())).toBeFalsy();
     });
 });

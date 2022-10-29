@@ -1,13 +1,13 @@
 import Benchmark from "benchmark";
 import { green } from "colors";
-import { tagOf, Tag } from "../src/.internal/tag";
+import { typeTagOf, TypeTag } from "../src/.internal/tag";
 
 function isNumericString_ByNumber(value: any): boolean {
-    return tagOf(value) === Tag.String && !Number.isNaN(+value);
+    return typeTagOf(value) === TypeTag.String && !Number.isNaN(+value);
 }
 
 function isNumericString_ByRegExp(value: any): boolean {
-    return tagOf(value) === Tag.String && /^ *[+-]?(\d+\.?\d*|\.?\d+) *$/.test(value);
+    return typeTagOf(value) === TypeTag.String && /^ *[+-]?(\d+\.?\d*|\.?\d+) *$/.test(value);
 }
 
 new Benchmark.Suite()

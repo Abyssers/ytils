@@ -1,14 +1,19 @@
 import Benchmark from "benchmark";
 import { green } from "colors";
-import { tagOf, Tag } from "../src/.internal/tag";
+import { typeTagOf, TypeTag } from "../src/.internal/tag";
 
 function isFloat_OneBreath_ByPlus(value: any): boolean {
-    return tagOf(value) === Tag.Number && !Number.isNaN(+value) && !Number.isInteger(+value) && Number.isFinite(+value);
+    return (
+        typeTagOf(value) === TypeTag.Number &&
+        !Number.isNaN(+value) &&
+        !Number.isInteger(+value) &&
+        Number.isFinite(+value)
+    );
 }
 
 function isFloat_OneBreath_ByNumber(value: any): boolean {
     return (
-        tagOf(value) === Tag.Number &&
+        typeTagOf(value) === TypeTag.Number &&
         !Number.isNaN(Number(value)) &&
         !Number.isInteger(Number(value)) &&
         Number.isFinite(Number(value))
@@ -16,13 +21,13 @@ function isFloat_OneBreath_ByNumber(value: any): boolean {
 }
 
 function isFloat_TransformFirst_ByPlus(value: any): boolean {
-    if (tagOf(value) !== Tag.Number) return false;
+    if (typeTagOf(value) !== TypeTag.Number) return false;
     const transformed = +value;
     return !Number.isNaN(transformed) && !Number.isInteger(transformed) && Number.isFinite(transformed);
 }
 
 function isFloat_TransformFirst_ByNumber(value: any): boolean {
-    if (tagOf(value) !== Tag.Number) return false;
+    if (typeTagOf(value) !== TypeTag.Number) return false;
     const transformed = Number(value);
     return !Number.isNaN(transformed) && !Number.isInteger(transformed) && Number.isFinite(transformed);
 }

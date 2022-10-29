@@ -1,4 +1,4 @@
-import { tagOf, Tag } from "../.internal/tag";
+import { typeTagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is a Promise object.
@@ -24,6 +24,8 @@ import { tagOf, Tag } from "../.internal/tag";
  * isPromise("6")
  * // => false
  */
-export function isPromise<T>(value: any): value is Promise<T> {
-    return tagOf(value) === Tag.Promise;
+export function isPromise<T>(value: Promise<T>): value is Promise<T>;
+export function isPromise(value: any): boolean;
+export function isPromise(value: any): boolean {
+    return typeTagOf(value) === TypeTag.Promise;
 }
