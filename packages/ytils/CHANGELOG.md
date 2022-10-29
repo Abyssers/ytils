@@ -1,5 +1,16 @@
 # ytils
 
+## 0.0.13
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @ytils/typ@0.1.1
+    -   @ytils/calc@0.0.7
+    -   @ytils/cmpr@0.0.5
+    -   @ytils/recre8@0.0.9
+    -   @ytils/ref@0.0.5
+
 ## 0.0.12
 
 ### Patch Changes
