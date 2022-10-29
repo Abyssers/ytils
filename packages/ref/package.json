@@ -1,6 +1,6 @@
 {
     "name": "@ytils/ref",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "engines": {
         "node": ">=16.11.0",
         "npm": "please-use-pnpm",
