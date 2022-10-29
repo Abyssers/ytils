@@ -15,8 +15,8 @@ rootPkgCfgs.devDependencies = {
 delete rootPkgCfgs.dependencies;
 Object.keys(rootPkgCfgs.devDependencies).forEach(depName => {
     const depVersion = rootPkgCfgs.devDependencies[depName];
-    const matches = depVersion.match(/(\d+\.){2}\d+/);
-    if (matches !== null && depVersion.endsWith(matches[0])) {
+    const matches = depVersion.match(/(\d+\.){2}\d+$/);
+    if (matches !== null) {
         console.log(`${depName}: ${depVersion} --> ${matches[0]}`);
         rootPkgCfgs.devDependencies[depName] = `${matches[0]}`;
     }
