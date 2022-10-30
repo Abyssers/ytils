@@ -4,22 +4,24 @@
  * @returns {any} The prototype of value
  * @example
  *
- * protoOf(6)
+ * prototypeOf(6)
  * // => Number.prototype
  *
- * protoOf("6")
+ * prototypeOf("6")
  * // => String.prototype
  *
- * protoOf({})
+ * prototypeOf({})
  * // => Object.prototype
  *
- * protoOf([])
+ * prototypeOf([])
  * // => Array.prototype
  *
- * protoOf(new (class A { constructor() {} })())
+ * prototypeOf(new (class A { constructor() {} })())
  * // => A.prototype
  */
-export function protoOf(value: any): any {
+export function prototypeOf(value: any): any {
     if (value == null) return null;
     return Object.getPrototypeOf(value);
 }
+
+export const protoOf = prototypeOf;

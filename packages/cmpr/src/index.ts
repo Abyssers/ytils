@@ -1,3 +1,3 @@
-export * from "./isEq";
-export * from "./isStrictEq";
-export * from "./isTypeEq";
+export * from "./isEqual";
+export * from "./isStrictEqual";
+export * from "./isTypeEqual";

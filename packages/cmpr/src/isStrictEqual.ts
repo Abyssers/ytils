@@ -5,24 +5,26 @@
  * @returns {boolean} Returns true if lhs === rhs or both lhs and rhs are NaN, else false
  * @example
  *
- * isStrictEq(6, 6)
+ * isStrictEqual(6, 6)
  * // true
  *
- * isStrictEq(NaN, NaN)
+ * isStrictEqual(NaN, NaN)
  * // true
  *
- * isStrictEq("6", "6")
+ * isStrictEqual("6", "6")
  * // true
  *
- * isStrictEq(6, "6")
+ * isStrictEqual(6, "6")
  * // => false
  *
- * isStrictEq({}, {})
+ * isStrictEqual({}, {})
  * // => false
  *
- * isStrictEq([], [])
+ * isStrictEqual([], [])
  * // => false
  */
-export function isStrictEq(lhs: any, rhs: any): boolean {
+export function isStrictEqual(lhs: any, rhs: any): boolean {
     return lhs === rhs || (lhs !== lhs && rhs !== rhs);
 }
+
+export const isStrictEq = isStrictEqual;

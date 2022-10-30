@@ -5,25 +5,28 @@
  * @returns {boolean} Returns true if lhs and rhs are of the same type, else false
  * @example
  *
- * isTypeEq(6, 6)
+ * isTypeEqual(6, 6)
  * // true
  *
- * isTypeEq(6, new Number(6))
+ * isTypeEqual(6, new Number(6))
  * // => true
  *
- * isTypeEq("6", "6")
+ * isTypeEqual("6", "6")
  * // true
  *
- * isTypeEq({}, {})
+ * isTypeEqual({}, {})
  * // => true
  *
- * isTypeEq([], [])
+ * isTypeEqual([], [])
  * // => true
  *
- * isTypeEq(6, "6")
+ * isTypeEqual(6, "6")
  * // => false
  */
-export function isTypeEq<T>(lhs: T, rhs: any): rhs is T {
+export function isTypeEqual<T>(lhs: T, rhs: any): rhs is T {
     if (lhs == null || rhs == null) return lhs === rhs;
     return lhs.constructor === rhs.constructor;
 }
+
+export const isTypeSame = isTypeEqual;
+export const isTypeEq = isTypeEqual;

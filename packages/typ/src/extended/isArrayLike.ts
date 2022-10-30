@@ -22,7 +22,7 @@ import { isInteger } from "./isInteger";
  * // => false
  */
 export function isArrayLike<T>(value: ArrayLike<T>): value is ArrayLike<T>;
-export function isArrayLike(value: any): boolean;
+export function isArrayLike(value: any): value is ArrayLike<any>;
 export function isArrayLike(value: any): boolean {
     return (
         value != null &&
