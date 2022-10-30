@@ -1,4 +1,4 @@
-import { tagOf, Tag } from "../.internal/tag";
+import { typeTagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is NaN or a Number object whose primitive value is NaN.
@@ -21,6 +21,6 @@ import { tagOf, Tag } from "../.internal/tag";
  * isStrictNaN(new Number(4))
  * // => false
  */
-export function isStrictNaN(value: any): boolean {
-    return tagOf(value) === Tag.Number && Number.isNaN(+value);
+export function isStrictNaN(value: any): value is number {
+    return typeTagOf(value) === TypeTag.Number && Number.isNaN(+value);
 }

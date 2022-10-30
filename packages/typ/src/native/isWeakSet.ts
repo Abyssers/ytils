@@ -1,4 +1,4 @@
-import { tagOf, Tag } from "../.internal/tag";
+import { typeTagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is a WeakSet object.
@@ -12,6 +12,8 @@ import { tagOf, Tag } from "../.internal/tag";
  * isWeakSet(new WeakSet([{ a: 1 }, { b: 2 }]))
  * // => true
  */
-export function isWeakSet<T extends object>(value: any): value is WeakSet<T> {
-    return tagOf(value) === Tag.WeakSet;
+export function isWeakSet<T extends object>(value: WeakSet<T>): value is WeakSet<T>;
+export function isWeakSet(value: any): value is WeakSet<any>;
+export function isWeakSet(value: any): boolean {
+    return typeTagOf(value) === TypeTag.WeakSet;
 }

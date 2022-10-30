@@ -1,4 +1,4 @@
-import { isNum } from "./isNum";
+import { isNumber } from "./isNumber";
 
 /**
  * Checks whether value is neither a number nor a Number object.
@@ -28,5 +28,5 @@ import { isNum } from "./isNum";
  * // => false
  */
 export function isNaN(value: any): value is Omit<any, keyof number> {
-    return !isNum(value);
+    return !isNumber(value);
 }

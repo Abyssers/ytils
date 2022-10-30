@@ -46,30 +46,36 @@ function getSubPkgs() {
 }
 
 function pnpm(args, options = { cwd: getRootPath() }) {
-    switch (process.platform) {
-        case "win32":
-            spawnSync("pnpm.cmd", args, options);
-            break;
-        default:
-            spawnSync("pnpm", args, options);
-            break;
-    }
+    return new Promise(resolve => {
+        switch (process.platform) {
+            case "win32":
+                spawnSync("pnpm.cmd", args, options);
+                break;
+            default:
+                spawnSync("pnpm", args, options);
+                break;
+        }
+        resolve();
+    });
 }
 
 function npx(args, options = { cwd: getRootPath() }) {
-    switch (process.platform) {
-        case "win32":
-            spawnSync("npx.cmd", args, options);
-            break;
-        default:
-            spawnSync("npx", args, options);
-            break;
-    }
+    return new Promise(resolve => {
+        switch (process.platform) {
+            case "win32":
+                spawnSync("npx.cmd", args, options);
+                break;
+            default:
+                spawnSync("npx", args, options);
+                break;
+        }
+        resolve();
+    });
 }
 
 function prettier(...files) {
     if (files.length === 0) return;
-    npx(["prettier", "--write", ...files]);
+    return npx(["prettier", "--write", ...files]);
 }
 
 module.exports = {

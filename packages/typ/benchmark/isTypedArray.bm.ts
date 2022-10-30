@@ -1,26 +1,26 @@
 import Benchmark from "benchmark";
 import { green } from "colors";
-import { tagOf, Tag } from "../src/.internal/tag";
+import { typeTagOf, TypeTag } from "../src/.internal/tag";
 
 function isTypedArray_ByEnumeration(value: any): boolean {
-    const tag = tagOf(value);
+    const typeTag = typeTagOf(value);
     return (
-        tag === Tag.BigInt64Array ||
-        tag === Tag.BigUint64Array ||
-        tag === Tag.Float32Array ||
-        tag === Tag.Float64Array ||
-        tag === Tag.Int16Array ||
-        tag === Tag.Int32Array ||
-        tag === Tag.Int8Array ||
-        tag === Tag.Uint16Array ||
-        tag === Tag.Uint32Array ||
-        tag === Tag.Uint8Array ||
-        tag === Tag.Uint8ClampedArray
+        typeTag === TypeTag.BigInt64Array ||
+        typeTag === TypeTag.BigUint64Array ||
+        typeTag === TypeTag.Float32Array ||
+        typeTag === TypeTag.Float64Array ||
+        typeTag === TypeTag.Int16Array ||
+        typeTag === TypeTag.Int32Array ||
+        typeTag === TypeTag.Int8Array ||
+        typeTag === TypeTag.Uint16Array ||
+        typeTag === TypeTag.Uint32Array ||
+        typeTag === TypeTag.Uint8Array ||
+        typeTag === TypeTag.Uint8ClampedArray
     );
 }
 
 function isTypedArray_ByRegExp(value: any): boolean {
-    return /^\[object (Float(32|64)|(I|Ui)nt(8|16|32)|Uint8Clamped|Big(I|Ui)nt64)Array\]$/.test(tagOf(value));
+    return /^\[object (Float(32|64)|(I|Ui)nt(8|16|32)|Uint8Clamped|Big(I|Ui)nt64)Array\]$/.test(typeTagOf(value));
 }
 
 new Benchmark.Suite()

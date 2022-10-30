@@ -1,4 +1,4 @@
-import { tagOf, Tag } from "../.internal/tag";
+import { typeTagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is a Set object.
@@ -12,6 +12,8 @@ import { tagOf, Tag } from "../.internal/tag";
  * isSet(new Set([0, 1, 2]))
  * // => true
  */
-export function isSet<T>(value: any): value is Set<T> {
-    return tagOf(value) === Tag.Set;
+export function isSet<T>(value: Set<T>): value is Set<T>;
+export function isSet(value: any): value is Set<any>;
+export function isSet(value: any): boolean {
+    return typeTagOf(value) === TypeTag.Set;
 }

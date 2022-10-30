@@ -1,5 +1,19 @@
 # @ytils/calc
 
+## 0.0.7
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @ytils/typ@0.1.1
+
+## 0.0.6
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @ytils/typ@0.1.0
+
 ## 0.0.5
 
 ### Patch Changes

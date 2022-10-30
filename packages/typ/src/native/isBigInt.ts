@@ -1,4 +1,4 @@
-import { tagOf, Tag } from "../.internal/tag";
+import { typeTagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is a BigInt object.
@@ -22,5 +22,5 @@ import { tagOf, Tag } from "../.internal/tag";
  * // => false
  */
 export function isBigInt(value: any): value is bigint {
-    return tagOf(value) === Tag.BigInt;
+    return typeTagOf(value) === TypeTag.BigInt;
 }

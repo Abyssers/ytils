@@ -1,4 +1,4 @@
-import { tagOf, Tag } from "../.internal/tag";
+import { typeTagOf, TypeTag } from "../.internal/tag";
 
 /**
  * Checks whether value is a boolean or a Boolean object.
@@ -22,5 +22,5 @@ import { tagOf, Tag } from "../.internal/tag";
  * // => false
  */
 export function isBool(value: any): value is boolean {
-    return tagOf(value) === Tag.Boolean;
+    return typeTagOf(value) === TypeTag.Boolean;
 }

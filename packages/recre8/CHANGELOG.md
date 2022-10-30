@@ -1,5 +1,21 @@
 # @ytils/recre8
 
+## 0.0.9
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @ytils/typ@0.1.1
+    -   @ytils/cmpr@0.0.5
+
+## 0.0.8
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @ytils/typ@0.1.0
+    -   @ytils/cmpr@0.0.4
+
 ## 0.0.7
 
 ### Patch Changes
