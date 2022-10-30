@@ -4,22 +4,22 @@
  * @returns {any} The end prototype of value's prototype chain
  * @example
  *
- * endProtoOf(6)
+ * endPrototypeOf(6)
  * // => Object.prototype
  *
- * endProtoOf("6")
+ * endPrototypeOf("6")
  * // => Object.prototype
  *
- * endProtoOf({})
+ * endPrototypeOf({})
  * // => Object.prototype
  *
- * endProtoOf([])
+ * endPrototypeOf([])
  * // => Object.prototype
  *
- * endProtoOf(new (class A { constructor() {} })())
+ * endPrototypeOf(new (class A { constructor() {} })())
  * // => Object.prototype
  */
-export function endProtoOf(value: any): any {
+export function endPrototypeOf(value: any): any {
     if (value == null) return null;
     let proto = value;
     while (Object.getPrototypeOf(proto) !== null) {
@@ -27,3 +27,5 @@ export function endProtoOf(value: any): any {
     }
     return proto;
 }
+
+export const endProtoOf = endPrototypeOf;

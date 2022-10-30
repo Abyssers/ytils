@@ -1,5 +1,18 @@
 # ytils
 
+## 0.1.0
+
+### Minor Changes
+
+-   exposed more alias
+
+### Patch Changes
+
+-   Updated dependencies
+    -   @ytils/cmpr@0.0.6
+    -   @ytils/recre8@0.0.10
+    -   @ytils/ref@0.0.6
+
 ## 0.0.13
 
 ### Patch Changes

@@ -29,3 +29,5 @@ export function randomOf<T>(...values: ArrayLike<T>[] | T[]): T | undefined {
         return undefined;
     }
 }
+
+export const rndOf = randomOf;

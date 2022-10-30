@@ -1,4 +1,4 @@
 export * from "./clone";
-export * from "./intxn";
+export * from "./intersection";
 export * from "./pairize";
 export * from "./union";
